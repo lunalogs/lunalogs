@@ -4,15 +4,17 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import type { GetStaticProps } from 'next';
 import { FiDownload, FiMapPin, FiMail } from 'react-icons/fi';
 import { FaGithub, FaXTwitter, FaLinkedin } from 'react-icons/fa6';
+import ResumeArchive from '../components/ResumeArchive';
+import { resumeFilePath, socialLinks } from '../lib/site';
 
 const About: React.FC = () => {
   const { t } = useTranslation('common');
 
-  const socialLinks = [
-    { href: 'https://github.com/luna25y', icon: FaGithub, label: 'GitHub' },
-    { href: 'https://x.com/luna25y_', icon: FaXTwitter, label: 'Twitter' },
-    { href: 'https://www.linkedin.com/in/rujie-yang-7a5868268/', icon: FaLinkedin, label: 'LinkedIn' },
-    { href: 'mailto:lunayang025@gmail.com', icon: FiMail, label: 'Email' },
+  const profiles = [
+    { href: socialLinks.github, icon: FaGithub, label: 'GitHub' },
+    { href: socialLinks.x, icon: FaXTwitter, label: 'Twitter' },
+    { href: socialLinks.linkedin, icon: FaLinkedin, label: 'LinkedIn' },
+    { href: socialLinks.email, icon: FiMail, label: 'Email' },
   ];
 
   return (
@@ -51,7 +53,7 @@ const About: React.FC = () => {
           <div className="about-block">
             <h3>{t('about.connectLabel', 'Connect')}</h3>
             <div className="about-links">
-              {socialLinks.map((link) => (
+              {profiles.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
@@ -69,7 +71,7 @@ const About: React.FC = () => {
 
         {/* Resume Download - Secondary Action */}
         <a
-          href="/files/Rujie Yang (Luna).pdf"
+          href={resumeFilePath}
           download
           className="resume-download"
         >
@@ -77,6 +79,8 @@ const About: React.FC = () => {
           {t('about.downloadResume', 'Download Resume')}
         </a>
       </div>
+
+      <ResumeArchive />
     </div>
   );
 };

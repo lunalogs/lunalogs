@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import type { GetStaticProps } from 'next';
+import { socialLinks } from '../lib/site';
 
 // Constellation nodes for the knowledge map teaser
 interface ConstellationNode {
@@ -158,7 +159,7 @@ const Writing: React.FC = () => {
         <p style={{ fontSize: '0.875rem', color: 'var(--text-tertiary)' }}>
           {t('writing.followTeaser', 'New writing shared on ')}
           <a 
-            href="https://x.com/luna25y_" 
+            href={socialLinks.x}
             target="_blank" 
             rel="noopener noreferrer"
             style={{ color: 'var(--text-secondary)' }}
@@ -167,7 +168,7 @@ const Writing: React.FC = () => {
           </a>
           {' '}{t('writing.and', 'and')}{' '}
           <a 
-            href="https://github.com/luna25y" 
+            href={socialLinks.github}
             target="_blank" 
             rel="noopener noreferrer"
             style={{ color: 'var(--text-secondary)' }}

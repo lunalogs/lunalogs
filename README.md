@@ -1,28 +1,26 @@
-# Hi, I'm Luna
+# lunalogs
 
-I'm a software engineer.<br>
-I enjoy exploring Web3, smart contracts, and the potential of AI technologies.<br>
-My passion lies in creating practical solutions, from backend systems to innovative user interfaces.<br>
-my website: [luna25y.com](https://luna25y.com)
+Personal brand website for [lunalogs.com](https://lunalogs.com).
 
+## Overview
 
-### 🎼 My Skills
-- **Languages**: `Java`  `Python`  `SQL` `JavaScript`  `TypeScript`  `HTML/CSS`  `C#`  `Solidity`  `Swift(Beginner)`
-- **Frameworks**: `React`  `Node.js`  `Express.js`  `Django`  `Spring Boot`
-- **Databases**: `MySQL`  `Oracle`  `AWS DynamoDB(Beginner)`  `Redis(Beginner)`
-- **Platforms & Tools**: `OutSystems`  `Postman`  `Unity(Beginner)`
+This project is a rebuilt public-facing site for Luna's work, writing, and ongoing AI × crypto experiments. The current version uses a restrained editorial direction instead of the older resume-first presentation.
 
+## Stack
 
-### ✨ Fun Facts
-- ENTJ 
-- Interested in combining metaphysics and personal growth.
-- Chinese, Japanese, English, French(Beginner).
+- Next.js Pages Router
+- TypeScript
+- `next-i18next`
+- Global CSS
 
-<br>
+## Scripts
 
-Feel free to explore my projects or reach out through my website. Let's build something amazing together!
+- `npm run dev`
+- `npm run build`
+- `npm run start`
 
-<br>
+## Content Notes
 
-![Profile Views](https://komarev.com/ghpvc/?username=luna25y&color=green)
-
+- Localized copy lives in `public/locales/en`, `public/locales/zh`, and `public/locales/ja`.
+- The downloadable resume is kept in `public/files/rujie-yang-luna-resume.pdf`.
+- Historical experience data is preserved in the locale files and surfaced on the About page as an archive.

@@ -1,11 +1,8 @@
-// define default lan
-
 module.exports = {
-    i18n: {
-      defaultLocale: 'en',
-      locales: ['en', 'zh', 'ja'],
-    },
-    defaultNS: 'common',
-    localePath: './public/locales',
-  };
-  
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'zh', 'ja'],
+  },
+  defaultNS: 'common',
+  localePath: './public/locales',
+};

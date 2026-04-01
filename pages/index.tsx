@@ -3,9 +3,10 @@ import type { GetStaticProps } from 'next';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { FiDownload, FiPlus, FiX, FiMapPin, FiMail, FiArrowUpRight } from 'react-icons/fi';
+import { FiDownload, FiPlus, FiMapPin, FiMail, FiArrowUpRight } from 'react-icons/fi';
 import { FaGithub, FaXTwitter, FaLinkedin } from 'react-icons/fa6';
 import FoxConstellation from '../components/FoxConstellation';
+import { resumeFilePath, socialLinks } from '../lib/site';
 
 type ExpandedSection = 'projects' | 'writing' | 'about' | null;
 
@@ -31,16 +32,16 @@ const Home: React.FC = () => {
   };
 
   const secondaryLinks = [
-    { href: 'https://github.com/luna25y', icon: FaGithub, label: 'GitHub' },
-    { href: 'https://x.com/luna25y_', icon: FaXTwitter, label: 'X' },
-    { href: 'https://www.linkedin.com/in/rujie-yang-7a5868268/', icon: FaLinkedin, label: 'LinkedIn' },
+    { href: socialLinks.github, icon: FaGithub, label: 'GitHub' },
+    { href: socialLinks.x, icon: FaXTwitter, label: 'X' },
+    { href: socialLinks.linkedin, icon: FaLinkedin, label: 'LinkedIn' },
   ];
 
   const aboutSocialLinks = [
-    { href: 'https://github.com/luna25y', icon: FaGithub, label: 'GitHub' },
-    { href: 'https://x.com/luna25y_', icon: FaXTwitter, label: 'Twitter' },
-    { href: 'https://www.linkedin.com/in/rujie-yang-7a5868268/', icon: FaLinkedin, label: 'LinkedIn' },
-    { href: 'mailto:lunayang025@gmail.com', icon: FiMail, label: 'Email' },
+    { href: socialLinks.github, icon: FaGithub, label: 'GitHub' },
+    { href: socialLinks.x, icon: FaXTwitter, label: 'Twitter' },
+    { href: socialLinks.linkedin, icon: FaLinkedin, label: 'LinkedIn' },
+    { href: socialLinks.email, icon: FiMail, label: 'Email' },
   ];
 
   const projects = [
@@ -210,7 +211,7 @@ const Home: React.FC = () => {
                     </div>
                     <p className="inline-writing-note">
                       {t('writing.followTeaser', 'New writing shared on ')}
-                      <a href="https://x.com/luna25y_" target="_blank" rel="noopener noreferrer">Twitter/X</a>
+                      <a href={socialLinks.x} target="_blank" rel="noopener noreferrer">Twitter/X</a>
                     </p>
                   </div>
                 </div>
@@ -255,7 +256,7 @@ const Home: React.FC = () => {
                         </div>
                       </div>
                     </div>
-                    <a href="/files/Rujie Yang (Luna).pdf" download className="resume-download-compact">
+                    <a href={resumeFilePath} download className="resume-download-compact">
                       <FiDownload size={14} />
                       {t('about.downloadResume', 'Download Resume')}
                     </a>
@@ -292,7 +293,7 @@ const Home: React.FC = () => {
             )}
           </p>
           <div className="home-poster-actions">
-            <a href="/files/Rujie Yang (Luna).pdf" download className="home-poster-action">
+            <a href={resumeFilePath} download className="home-poster-action">
               {t('home.resumeCta', 'Resume')}
               <FiDownload aria-hidden="true" size={14} />
             </a>

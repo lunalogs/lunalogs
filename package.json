@@ -1,45 +1,27 @@
 {
+  "name": "lunalogs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal brand site for lunalogs.com",
+  "author": "luna",
+  "license": "Apache-2.0",
   "dependencies": {
-    "@types/react-bootstrap": "^0.32.37",
-    "@types/sass": "^1.43.1",
-    "body-parser": "^1.20.3",
-    "bootstrap": "^5.3.3",
-    "cors": "^2.8.5",
-    "country-flag-icons": "^1.5.14",
-    "dotenv": "^16.4.7",
-    "emailjs-com": "^3.2.0",
-    "express": "^4.21.2",
     "i18next": "^24.2.2",
     "next": "^16.2.1",
     "next-i18next": "^15.4.1",
-    "nodemailer": "^6.10.0",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.10.9",
-    "react-country-flag": "^3.1.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^15.4.0",
-    "react-icons": "^5.4.0",
-    "sass": "^1.83.4"
+    "react-icons": "^5.4.0"
   },
   "devDependencies": {
     "@types/node": "^22.13.0",
     "@types/react": "^19.0.8",
-    "concurrently": "^9.1.2",
     "typescript": "^5.7.3"
   },
-  "name": "luna25y",
-  "version": "1.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"next dev\" \"cd backend && node index.js\"",
+    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "export": "next build && next export",
-    "serve": "concurrently \"next start\" \"cd backend && node index.js\""
-  },
-  "keywords": [],
-  "author": "luna",
-  "license": "ISC",
-  "main": "next-i18next.config.js",
-  "description": ""
+    "start": "next start"
+  }
 }

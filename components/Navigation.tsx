@@ -1,22 +1,20 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 import { FiMenu, FiX } from 'react-icons/fi';
+import { resumeFilePath } from '../lib/site';
 
-interface NavigationProps {
-  showResume?: boolean;
-}
-
-const Navigation: React.FC<NavigationProps> = ({ showResume = true }) => {
+const Navigation: React.FC = () => {
+  const { t } = useTranslation('common');
   const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const isHome = router.pathname === '/';
 
   const navItems = [
-    { href: '/', label: 'Home' },
-    { href: '/projects', label: 'Projects' },
-    { href: '/writing', label: 'Writing' },
-    { href: '/about', label: 'About' },
+    { href: '/', label: t('nav.home', 'Home') },
+    { href: '/projects', label: t('nav.projects', 'Projects') },
+    { href: '/writing', label: t('nav.writing', 'Writing') },
+    { href: '/about', label: t('nav.about', 'About') },
   ];
 
   const isActive = (href: string) => {
@@ -27,7 +25,7 @@ const Navigation: React.FC<NavigationProps> = ({ showResume = true }) => {
   };
 
   return (
-    <nav className={`nav ${isHome ? 'nav-home' : ''}`}>
+    <nav className="nav">
       <div className="nav-inner">
         <Link href="/" className="nav-brand">
           lunalogs
@@ -45,16 +43,14 @@ const Navigation: React.FC<NavigationProps> = ({ showResume = true }) => {
             </Link>
           ))}
           
-          {showResume && (
-            <a
-              href="/files/Rujie Yang (Luna).pdf"
-              download
-              className="nav-link-resume"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Resume
-            </a>
-          )}
+          <a
+            href={resumeFilePath}
+            download
+            className="nav-link-resume"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            {t('nav.resume', 'Resume')}
+          </a>
         </div>
 
         <button

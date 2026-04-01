@@ -6,6 +6,7 @@ import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import nextI18NextConfig from '../next-i18next.config';
+import { siteDomain, siteName } from '../lib/site';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
@@ -14,11 +15,12 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   // Dynamic page titles
   const getTitle = () => {
     const path = router.pathname;
-    if (path === '/') return 'lunalogs';
-    if (path === '/projects') return 'Projects — lunalogs';
-    if (path === '/writing') return 'Writing — lunalogs';
-    if (path === '/about') return 'About — lunalogs';
-    return 'lunalogs';
+    if (path === '/') return siteName;
+    if (path === '/projects') return `Projects — ${siteName}`;
+    if (path.startsWith('/projects/')) return `Project — ${siteName}`;
+    if (path === '/writing') return `Writing — ${siteName}`;
+    if (path === '/about') return `About — ${siteName}`;
+    return siteName;
   };
 
   return (
@@ -27,6 +29,12 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <title>{getTitle()}</title>
         <meta name="description" content={t('meta.description', 'Software engineer with MBA. Exploring AI × Crypto.')} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta property="og:site_name" content={siteName} />
+        <meta property="og:title" content={getTitle()} />
+        <meta property="og:description" content={t('meta.description', 'Software engineer with MBA. Exploring AI × Crypto.')} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://${siteDomain}${router.asPath === '/' ? '' : router.asPath}`} />
         
         {/* Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -38,6 +46,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         
         {/* Favicon */}
         <link rel="icon" href="/images/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png" />
         <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
       </Head>
       <Layout>

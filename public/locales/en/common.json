@@ -1,23 +1,18 @@
 {
   "nav": {
-    "about": "About",
     "home": "Home",
     "projects": "Projects",
-    "blog": "Blog",
     "writing": "Writing",
-    "friends": "Friends"
+    "about": "About",
+    "resume": "Resume"
   },
   "home": {
-    "eyebrow": "lunalogs",
-    "location": "Toronto",
     "nameplate": "luna",
-    "primaryDescriptor": "AI x Crypto",
     "projectsLabel": "Projects",
     "writingLabel": "Writing",
     "aboutLabel": "About",
     "posterNote": "Software engineer with business context. Building lunalogs as a quiet index for work, writing, and future experiments.",
-    "resumeCta": "Resume",
-    "contactLabel": "Elsewhere"
+    "resumeCta": "Resume"
   },
   "projects": {
     "pageTitle": "Projects",
@@ -41,7 +36,254 @@
     "backgroundLabel": "Background",
     "background": "Engineering at Toyota Systems, MBA from Laurentian University, fluent in Chinese, Japanese, and English.",
     "connectLabel": "Connect",
-    "downloadResume": "Download Resume"
+    "downloadResume": "Download Resume",
+    "timeline": {
+      "heading": "Experience Archive",
+      "summary": "A preserved multi-language record of previous study and work experience.",
+      "entries": [
+        {
+          "period": "Jan 2025 - Now",
+          "duration": "4 month",
+          "type": "Work",
+          "position": "Project Management",
+          "institution": "OceanInk LLC",
+          "location": "Toronto, Ontario, Canada",
+          "description": [
+            "- Served as the project coordination for an iOS application at Oceanink, managing schedules, facilitating team communication, and tracking deliverables.",
+            "- Collaborated closely with development, design, and marketing teams to ensure the smooth execution of project milestones.",
+            "- Contributed to UI/UX design discussions by providing user-centered feedback and assisting in aligning design with project goals.",
+            "- Supported marketing efforts by coordinating promotional activities aimed at increasing app visibility and user engagement.",
+            "- Maintained project documentation, monitored progress, and proactively addressed any communication gaps across teams."
+          ],
+          "skills": [
+            "Project Management",
+            "PhotoShop",
+            "Figma",
+            "UI/UX",
+            "Cross-functional Team Coordination"
+          ]
+        },
+        {
+          "period": "Sep 2023 - Jan 2025",
+          "duration": "16 months",
+          "type": "Education",
+          "position": "Master of Business Administration",
+          "institution": "Laurentian University",
+          "location": "Sudbury, Ontario, Canada",
+          "description": [
+            "- Studied Business Administration with courses in Project Management, Business Analysis, Managerial Economics, and so on.",
+            "- Self-studied various technologies."
+          ],
+          "skills": [
+            "Project Management",
+            "Investment Management",
+            "Business Analysis",
+            "Managerial Economics",
+            "Operation Management",
+            "Strategy Management",
+            "Unity",
+            "Solidity",
+            "Linux",
+            "TypeScript",
+            "Express.js",
+            "Node.js",
+            "MongoDB",
+            "Redis",
+            "Postman",
+            "Swift"
+          ]
+        },
+        {
+          "period": "May 2021 - Jul 2023",
+          "duration": "2 years and 2 months",
+          "type": "Work",
+          "institution": "SYSystem Co., Ltd. | Assigned to Toyota Systems",
+          "position": "Software Engineer",
+          "location": "Nagoya, Japan",
+          "subEntries": [
+            {
+              "period": "May 2022 - Jul 2023",
+              "duration": "14 months",
+              "subTitle": "OutSystems Support Team",
+              "description": [
+                "- Provided technical support for the use of the OutSystems platform, resolving technical issues and delivering customized solutions.",
+                "- Modified and developed internal applications and APIs based on requirements.",
+                "- Independently designed and implemented a REST API to connect with Snowflake for data access."
+              ],
+              "skills": [
+                "OutSystems",
+                "C#",
+                "JavaScript",
+                "HTML/CSS",
+                "SQL",
+                "Oracle",
+                "Project Management",
+                "Agile",
+                "Scrum",
+                "Jira"
+              ]
+            },
+            {
+              "period": "Oct 2021 - Nov 2021",
+              "duration": "1 months",
+              "subTitle": "Year-End Audit - Web Application",
+              "description": [
+                "Completed a web application project for the annual audit."
+              ],
+              "skills": [
+                "Python",
+                "Django"
+              ]
+            },
+            {
+              "period": "May 2021 - Apr 2022",
+              "duration": "11 months",
+              "subTitle": "Development Team",
+              "description": [
+                "Developed and maintained internal applications to support core business functions."
+              ],
+              "skills": [
+                "JavaScript",
+                "HTML/CSS",
+                "SQL",
+                "Oracle",
+                "OutSystems",
+                "Agile",
+                "Scrum"
+              ]
+            }
+          ]
+        },
+        {
+          "period": "Jul 2020 - Jul 2023",
+          "duration": "3 years",
+          "type": "Work",
+          "institution": "SYSystem Co., Ltd.",
+          "position": "Software Engineer",
+          "location": "Nagoya, Japan",
+          "subEntries": [
+            {
+              "period": "Jan 2021 - Apr 2021",
+              "duration": "4 months",
+              "subTitle": "Java Instructor - Employment Training Program",
+              "description": [
+                "Taught Java as part of a government employment training project."
+              ],
+              "skills": [
+                "Java",
+                "JavaScript",
+                "HTML",
+                "CSS",
+                "SQL",
+                "MySQL"
+              ]
+            },
+            {
+              "period": "Jul 2020 - Dec 2020",
+              "duration": "5 months",
+              "subTitle": "Payroll Management System Development",
+              "description": [
+                "Worked on developing an internal payroll management system focusing on role management, development, and testing."
+              ],
+              "skills": [
+                "Java",
+                "Spring Boot/MVC",
+                "JavaScript",
+                "HTML/CSS",
+                "SQL",
+                "MySQL",
+                "Junit",
+                "XML",
+                "Project Management"
+              ]
+            }
+          ]
+        },
+        {
+          "period": "July 2019 - Jun 2020",
+          "duration": "11 months",
+          "type": "Work",
+          "institution": "Xi'An Yuri Software (SYSystem Co., Ltd.'s Xi'an branch)",
+          "position": "Intern Software Engineer",
+          "location": "Xi'an, China",
+          "description": [
+            "- Interned at this branch office while awaiting the processing of Japanese work visa, temporarily delayed due to COVID.",
+            "- Undertoke basic programming tasks and provide support to other employees.",
+            "- Continued training in programming, data structures, and algorithms."
+          ],
+          "skills": [
+            "Java",
+            "Spring Boot/MVC",
+            "C++",
+            "JavaScript",
+            "HTML/CSS",
+            "SQL",
+            "MySQL",
+            "Junit",
+            "XML",
+            "Python"
+          ]
+        },
+        {
+          "period": "Sep 2015 - Jun 2019",
+          "duration": "4 years",
+          "type": "Education",
+          "position": "Bachelor of Arts in Japanese",
+          "institution": "Xi'an International Studies University",
+          "location": "Xi'an, China",
+          "description": [
+            "Studied Japanese language and culture; achieved JLPT-N1 Level."
+          ],
+          "skills": [
+            "JLPT-N1",
+            "Japanese Economics",
+            "Microsoft Office",
+            "Adobe Software"
+          ],
+          "subEntries": [
+            {
+              "period": "Feb 2019 - Jun 2019",
+              "duration": "5 months",
+              "subTitle": "Programming Training",
+              "institution": "Xi'An Yuri Software (SYSystem Co., Ltd.'s Xi'an branch)",
+              "location": "Xi'An, China",
+              "description": [
+                "- Received training in programming, data structures, and algorithms after passing the interview of SYSystem Co., Ltd..",
+                "- Earned a programmer certification recognized in China, Japan, and South Korea."
+              ],
+              "skills": [
+                "Java",
+                "Spring Boot/MVC",
+                "C++",
+                "JavaScript",
+                "HTML/CSS",
+                "SQL",
+                "MySQL",
+                "Junit",
+                "XML",
+                "Python"
+              ]
+            },
+            {
+              "period": "Jul 2017 - Oct 2017",
+              "duration": "4 months",
+              "type": "Work",
+              "subTitle": "Internship at Hotel",
+              "institution": "Hotel Green Plaza Karuizawa",
+              "location": "Karuizawa, Gunma, Japan",
+              "description": [
+                "Worked as Front Desk, supporting daily operations, guest check-ins and check-outs, and handling guest inquiries."
+              ],
+              "skills": [
+                "Customer Service",
+                "Marketing",
+                "Communication"
+              ]
+            }
+          ]
+        }
+      ]
+    }
   },
   "meta": {
     "description": "Software engineer with MBA. Exploring AI × Crypto."

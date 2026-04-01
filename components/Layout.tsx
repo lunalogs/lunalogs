@@ -5,16 +5,15 @@ import Footer from './Footer';
 
 interface LayoutProps {
   children: React.ReactNode;
-  showResumeInNav?: boolean;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children, showResumeInNav = true }) => {
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   const router = useRouter();
   const isHome = router.pathname === '/';
 
   return (
     <div className={`layout ${isHome ? 'layout-home' : ''}`}>
-      {!isHome && <Navigation showResume={showResumeInNav} />}
+      {!isHome && <Navigation />}
       <main className={`main-content ${isHome ? 'main-content-home' : ''}`}>
         {children}
       </main>

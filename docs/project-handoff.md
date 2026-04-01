@@ -122,27 +122,36 @@ Token-efficiency / collaboration strategy:
 Current stack:
 - Next.js Pages Router
 - TypeScript
-- CSS modules + global CSS (refreshed, no Bootstrap)
+- Global CSS
 - `next-i18next`
-- No Bootstrap dependency (removed)
+- Static site build only
+- No backend mail service
+- No Bootstrap dependency
 
 Current important files:
 - `pages/index.tsx`: dark, minimal poster-style home with large type and integrated navigation links
 - `pages/projects.tsx`: project list with hover-driven preview
 - `pages/writing.tsx`: knowledge constellation + article teasers
-- `pages/about.tsx`: concise about with secondary resume link
+- `pages/about.tsx`: concise about with a preserved experience archive
 - `components/Layout.tsx`: clean layout wrapper
 - `components/Navigation.tsx`: top navigation bar
 - `components/Footer.tsx`: social links footer
+- `components/ResumeArchive.tsx`: localized preserved work and study archive
+- `lib/site.ts`: shared site constants and external profile links
 - `styles/globals.css`: new design system (CSS variables, clean aesthetic)
-- `public/files/Rujie Yang (Luna).pdf`: downloadable resume
+- `public/files/rujie-yang-luna-resume.pdf`: downloadable resume
 - `CNAME`: points to `lunalogs.com`
+- `docs/project-handoff.md`: collaboration source of truth
 
 Deleted files:
 - `components/Sidebar.tsx` (replaced by Navigation)
+- `components/CosmosMemory.tsx` (unused experimental background removed)
+- `components/MemoryConstellation.tsx` (unused experimental background removed)
+- `components/ParticleBackground.tsx` (unused experimental background removed)
 - `styles/index.module.css` (old timeline styles)
 - `pages/blog.tsx`, `pages/blog/*` (replaced by Writing)
 - `pages/friends.tsx` (removed from MVP)
+- `backend/*` (legacy contact service removed)
 - Bootstrap CSS import (removed)
 
 ## 8. Preferred Technical Approach
@@ -216,6 +225,25 @@ Style implemented:
 - image-led project interaction
 
 ## 11. Update Log
+
+### 2026-04-01 - Codex (Repo Cleanup & Content Preservation Pass)
+- Removed legacy unused code and assets that were no longer connected to the live site:
+  - deleted experimental background components not used by any route
+  - removed the unused backend contact service and old backend-driven scripts
+  - removed old dependency residue from `package.json`
+- Normalized naming and shared config:
+  - renamed the resume asset to `public/files/rujie-yang-luna-resume.pdf`
+  - renamed this handoff file to `docs/project-handoff.md`
+  - added `lib/site.ts` to centralize resume path and external profile links
+- Preserved previous resume history instead of dropping it during the redesign:
+  - restored the full multilingual experience timeline in EN / ZH / JA locale files
+  - added `components/ResumeArchive.tsx`
+  - surfaced the preserved archive on `pages/about.tsx` in a cleaner expandable format
+- Standardized remaining app structure:
+  - localized navigation labels through translation files
+  - updated README to reflect the current project instead of the old profile-style summary
+  - simplified Next config and package scripts for the static site setup
+- Build should be re-verified after lockfile cleanup.
 
 ### 2026-03-31 - Kimi Code CLI (Primary Coding Agent)
 - **Major MVP Redesign Complete**
