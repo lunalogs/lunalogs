@@ -1,312 +1,56 @@
 {
-    "nav": {
-      "about": "About",
-      "home": "ホーム",
-      "projects": "プロジェクト",
-      "blog": "ブログ",
-      "friends": "フレンズ"
-    },
-    "about": {
-      "heading": "About",
-      "text": "こんにちは、Lunaです。",
-      "name": "Rujie Yang (Luna)",
-      "myDescription": "MBAを持つソフトウェアエンジニアとして、技術知とビジネスの知識をミクスし、多角的で課題を解決することを頑張ります。",
-      "contact": {
-        "email": "lunayang025@gmail.com",
-        "location": "Toronto"
-      },
-      "sendMessage": "Send me a quick message",
-      "contactForm": {
-        "title": "Contact Luna",
-        "email": "Your Email",
-        "message": "Message",
-        "send": "Send Message"
-      },
-      "downloadResume": "Download Resume",
-      "skills": {
-        "showMore": "すべてのスキルを見る",
-        "showLess": "折りたたむ"
-      },
-      "timeline": {
-        "heading": "経験とスキル",
-        "entries": [
-          {
-            "period": "Jan 2025 - Now",
-            "duration": "4 month",
-            "type": "Work",
-            "position": "Project Management",
-            "institution": "OceanInk LLC",
-            "location": "Toronto, Ontario, Canada",
-            "description": [
-              "- OceaninkにてiOSアプリ開発プロジェクトのコーディネーションを担当し、スケジュール管理、チーム間のコミュニケーション促進、納品物の進捗管理を行いました。",
-              "- 開発・デザイン・マーケティング各チームと密に連携し、プロジェクトの円滑な進行をサポートしました。",
-              "- UI/UX設計に関するディスカッションに参加し、ユーザー視点からのフィードバックを提供し、設計方針の調整を支援しました。",
-              "- アプリの認知度とユーザーエンゲージメント向上を目的としたプロモーション活動を調整し、マーケティング施策を支援しました。",
-              "- プロジェクト関連のドキュメントを管理し、進捗をモニタリングするとともに、チーム間のコミュニケーションギャップの解消に努めました。"
-            ],
-            "skills": [
-              "Project Management",
-              "PhotoShop",
-              "Figma",
-              "UI/UX",
-              "Cross-functional Team Coordination"
-            ]
-          },
-          {
-            "period": "Sep 2023 - Jan 2025",
-            "duration": "16 months",
-            "type": "Education",
-            "position": "Master of Business Administration",
-            "institution": "Laurentian University",
-            "location": "Sudbury, Ontario, Canada",
-            "description": [
-              "- プロジェクト管理、ビジネス分析、管理経済学などのコースを含む経営学を学びました。",
-              "- さまざまな技術を独学しました。"
-            ],
-            "skills": [
-              "Project Management",
-              "Investment Management",
-              "Business Analysis",
-              "Managerial Economics",
-              "Operation Management",
-              "Strategy Management",
-              "Unity",
-              "Solidity",
-              "Linux",
-              "TypeScript",
-              "Express.js",
-              "Node.js",
-              "MongoDB",
-              "Redis",
-              "Postman",
-              "Swift"
-            ]
-          },
-          {
-            "period": "May 2021 - Jul 2023",
-            "duration": "2 years and 2 months",
-            "type": "Work",
-            "institution": "SYSystem Co., Ltd. | Assigned to Toyota Systems",
-            "position": "Software Engineer",
-            "location": "Nagoya, Japan",
-            "subEntries": [
-              {
-                "period": "May 2022 - Jul 2023",
-                "duration": "14 months",
-                "subTitle": "OutSystems サポートチーム",
-                "description": [
-                  "- OutSystemsプラットフォームの技術サポートを提供し、技術的な問題を解決し、カスタマイズされたソリューションを提供しました。",
-                  "- 要件に基づいて社内アプリケーションやAPIを修正・開発しました。",
-                  "- Snowflakeと接続するためのREST APIを独自に設計・実装しました。"
-                ],
-                "skills": [
-                  "OutSystems", 
-                  "C#", 
-                  "JavaScript", 
-                  "HTML/CSS", 
-                  "SQL", 
-                  "Oracle", 
-                  "Project Management", 
-                  "Agile", 
-                  "Scrum", 
-                  "Jira"
-                ]
-              },
-              {
-                "period": "Oct 2021 - Nov 2021",
-                "duration": "1 months",
-                "subTitle": "年次監査向けウェブアプリケーションの開発",
-                "description": [
-                  "年次監査のためのウェブアプリケーションプロジェクトを完了しました。"
-                ],
-                "skills": ["Python", "Django"]
-              },
-              {
-                "period": "May 2021 - Apr 2022",
-                "duration": "11 months",
-                "subTitle": "開発チーム",
-                "description": [
-                  "メインな業務機能を支援するための社内アプリケーションを開発・保守しました。"
-                ],
-                "skills": [
-                  "JavaScript", 
-                  "HTML/CSS", 
-                  "SQL", 
-                  "Oracle", 
-                  "OutSystems", 
-                  "Agile", 
-                  "Scrum"
-                ]
-              }
-            ]
-          },
-          {
-            "period": "Jul 2020 - Jul 2023",
-            "duration": "3 years",
-            "type": "Work",
-            "description": "",
-            "institution": "SYSystem Co., Ltd.",
-            "location": "Nagoya, Japan",
-            "position": "Software Engineer",
-            "subEntries": [
-              {
-                "period": "Jan 2021 - Apr 2021",
-                "duration": "4 months",
-                "subTitle": "JAVA　講師",
-                "description": [
-                  "政府の雇用研修プロジェクトの一環としてJavaを指導しました。"
-                ],
-                "skills": ["Java", "JavaScript", "HTML", "CSS", "SQL", "MySQL"]
-              },
-              {
-                "period": "Jul 2020 - Dec 2020",
-                "duration": "5 months",
-                "subTitle": "社内給与管理システムの開発",
-                "description": [
-                  "社内給与管理システムの役割管理の部分、一部画面のデザイン、開発とテストをしました。"
-                ],
-                "skills": [
-                  "Java", 
-                  "Spring Boot/MVC", 
-                  "JavaScript", 
-                  "HTML/CSS", 
-                  "SQL", 
-                  "MySQL", 
-                  "Junit", 
-                  "XML", 
-                  "Project Management"
-                ]
-              }
-            ]
-          },
-          {
-            "period": "July 2019 - Jun 2020",
-            "duration": "11 months",
-            "type": "work",
-            "institution": "Xi'An Yuri Software (SYSystem Co., Ltd.'s Xi'an branch)",
-            "position": "Intern Software Engineer",
-            "location": "Xi'an, China",
-            "description": [
-              "- COVIDの影響で一時的に遅延した日本の就労ビザの手続きを待つ間、この支社でインターンをしました。",
-              "- 基本的なプログラミング業務を担当し、他の社員をサポートしました。",
-              "- プログラミング、データ構造、アルゴリズムの研修を継続しました。"
-            ],
-            "skills": [
-              "Java", 
-              "Spring Boot/MVC", 
-              "C++", 
-              "JavaScript", 
-              "HTML/CSS", 
-              "SQL", 
-              "MySQL", 
-              "Junit", 
-              "XML", 
-              "Python"
-            ]
-          },
-          {
-            "period": "Sep 2015 - Jun 2019",
-            "duration": "4 years",
-            "type": "Education",
-            "position": "Bachelor of Arts in Japanese",
-            "institution": "Xi'an International Studies University",
-            "location": "Xi'an, China",
-            "description": [
-              "日本語と言語文化を学び、JLPT-N1レベルを取得しました。"
-            ],
-            "skills": [
-              "JLPT-N1",
-              "Japanese Economics",
-              "Microsoft Office",
-              "Adobe Software"
-            ],
-            "subEntries": [
-              {
-                "period": "Feb 2019 - Jun 2019",
-                "duration": "5 months",
-                "subTitle": "Programming Training",
-                "institution": "Xi'An Yuri Software (SYSystem Co., Ltd.'s Xi'an branch)",
-                "location": "Xi'An, China",
-                "description": [
-                  "- SYSystem Co., Ltd. の面接に合格後、プログラミング、データ構造、アルゴリズムの研修を受けました。",
-                  "- 中国、日本、韓国で認定されたプログラマー資格を取得しました。"
-                ],
-                "skills": [
-                  "Java", 
-                  "Spring Boot/MVC", 
-                  "C++", 
-                  "JavaScript", 
-                  "HTML/CSS", 
-                  "SQL", 
-                  "MySQL", 
-                  "Junit", 
-                  "XML", 
-                  "Python"
-                ]
-              },
-              {
-                "period": "Jul 2017 - Oct 2017",
-                "duration": "4 months",
-                "type":"work",
-                "subTitle": "Internship at Hotel",
-                "institution": "Hotel Green Plaza Karuizawa",
-                "location": "Karuizawa, Gunma, Japan", 
-                "description": [
-                  "日常業務をサポートし、ゲストのチェックイン・チェックアウト対応、問い合わせ対応を担当しました。"
-                ],
-                "skills": ["Customer Service",  "Marketing", "Communication"]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "home": {
-      "heading": "ホーム",
-      "text": "こちらはホームページの内容です。"
-    },
-    "projects": {
-      "heading": "プロジェクト",
-      "taptune": {
-        "short_desc": "为Mac键盘提供机械键盘敲击音效增强",
-        "features": [
-          "多种预设音效（黑轴/红轴/青轴等）",
-          "支持自定义音效上传",
-          "实时音量可视化",
-          "多语言界面（中/英/日）",
-          "系统托盘控制",
-          "开机自启动配置"
-        ]
-      },
-      "features": "核心功能",
-      "languages": "支持语言",
-      "download": "下载与源码",
-      "mac_store": "Mac应用商店",
-      "source_code": "查看源码"
-    },
-    "blog": {
-      "heading": "ブログ",
-      "text": "こちらは私のブログ記事の一覧です。",
-      "codeMind": "コードの詩",
-      "flowFortune": "マネーの道",
-      "wanderWonder": "日々の記録"
-    },
-    "friends": {
-      "heading": "フレンズ",
-      "lanceMoe": {
-        "name": "LanceMoe",
-        "info":  "日本での一流開発者"
-      }
-    },
-    "language": {
-      "label": "言語",
-      "english": "EN",
-      "chinese": "中",
-      "japanese": "日"
-    },
-    "alert":{
-      "email_copied": "メールアドレスをコピーしました"
-    },
-    "name": "luna"
-  }
-  
+  "nav": {
+    "about": "About",
+    "home": "ホーム",
+    "projects": "プロジェクト",
+    "blog": "ブログ",
+    "writing": "ライティング",
+    "friends": "フレンズ"
+  },
+  "home": {
+    "eyebrow": "lunalogs",
+    "location": "Toronto",
+    "nameplate": "luna",
+    "primaryDescriptor": "AI x Crypto",
+    "projectsLabel": "Projects",
+    "writingLabel": "Writing",
+    "aboutLabel": "About",
+    "posterNote": "ビジネス文脈を持つソフトウェアエンジニア。lunalogs を作品、文章、これからの実験を置く静かな個人インデックスとして育てています。",
+    "resumeCta": "Resume",
+    "contactLabel": "Elsewhere"
+  },
+  "projects": {
+    "pageTitle": "プロジェクト",
+    "pageSubtitle": "選りすぐりの作品と探索中のプロジェクト。一部は公開中、一部は進行中。",
+    "moreComing": "成熟したプロジェクトは随時追加されます。"
+  },
+  "writing": {
+    "pageTitle": "ライティング",
+    "pageSubtitle": "エッセイ、ノート、リサーチ。進行中の知識空間。",
+    "mapLabel": "ナレッジコンステレーション",
+    "followTeaser": "新しい記事は",
+    "and": "と"
+  },
+  "about": {
+    "pageTitle": "About",
+    "intro": "MBAを持つソフトウェアエンジニアとして、テクノロジーとビジネスの交差点で働いています。トヨタシステムズで社内ツールを構築し、iOSプロジェクトをコーディネートしてきました。現在はAIエージェントとオンチェーンアプリケーションを探索中です。",
+    "locationLabel": "所在地",
+    "location": "トロント、カナダ",
+    "focusLabel": "現在の焦点",
+    "focus": "AI × 暗号。有益なプロダクトを構築。公開学習。",
+    "backgroundLabel": "背景",
+    "background": "トヨタシステムズでのエンジニアリング、ローレンティアン大学MBA、中国語・日本語・英語堪能。",
+    "connectLabel": "連絡先",
+    "downloadResume": "履歴書をダウンロード"
+  },
+  "meta": {
+    "description": "MBAを持つソフトウェアエンジニア。AI × 暗号を探索中。"
+  },
+  "language": {
+    "label": "言語",
+    "english": "EN",
+    "chinese": "中",
+    "japanese": "日"
+  },
+  "name": "luna"
+}

@@ -1,359 +1,318 @@
-import React, { useState, useEffect }  from 'react';
+import React, { useState, useRef } from 'react';
+import type { GetStaticProps } from 'next';
+import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import type { GetStaticProps } from 'next';
-import styles from '../styles/index.module.css';
-import { CiLocationOn } from 'react-icons/ci';
-import { FiDownload } from 'react-icons/fi';
-import { GB, JP, CN } from 'country-flag-icons/react/3x2';
-import { useRouter } from 'next/router';
-import Head from 'next/head';
+import { FiDownload, FiPlus, FiX, FiMapPin, FiMail, FiArrowUpRight } from 'react-icons/fi';
+import { FaGithub, FaXTwitter, FaLinkedin } from 'react-icons/fa6';
+import FoxConstellation from '../components/FoxConstellation';
 
-// 定义时间轴条目的接口
-interface TimelineEntry {
-  period: string;
-  duration?: string;
-  type?: string;
-  title: string;
-  institution?: string;
-  location?: string;
-  description?: string[];
-  position?: string;
-  skills?: string[];
-  subEntries?: TimelineEntry[];
-}
+type ExpandedSection = 'projects' | 'writing' | 'about' | null;
 
-// 从 period 字符串中提取起始年月，匹配 "Month YYYY" 格式
-const extractStartYearMonth = (period: string): string => {
-  const match = period.match(/\b([A-Za-z]+ \d{4})\b/);
-  return match ? match[0] : '';
-};
-
-// 从 period 字符串中提取结束年月，匹配 "Month YYYY" 格式
-const extractEndYearMonth = (period: string): string => {
-  const matches = period.match(/\b([A-Za-z]+ \d{4})\b/g); 
-  // 如果没有匹配项或者只有一项，返回 "Now"
-  if (!matches || matches.length === 1) {
-    return 'Now';
-  }
-  return matches[matches.length - 1];
-};
-
-const About: React.FC = () => {
-  const router = useRouter();
+const Home: React.FC = () => {
   const { t } = useTranslation('common');
-  const [showContactForm, setShowContactForm] = useState(false);
-  const [message, setMessage] = useState('');
-  const [email, setEmail] = useState('');
-  const [expandedSkills, setExpandedSkills] = useState<{ 
-    [key: string]: boolean  // 改用字符串键以支持子条目
-  }>({});
+  const [expanded, setExpanded] = useState<ExpandedSection>(null);
+  const [exiting, setExiting] = useState(false);
+  const [hoveredProject, setHoveredProject] = useState<string | null>(null);
+  const exitTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // 添加默认显示标签数量的常量
-  const DEFAULT_VISIBLE_TAGS = 4;
-
-  // 添加一个检查是否为移动端的状态
-  const [isMobile, setIsMobile] = useState(false);
-
-  // 添加检测屏幕宽度的效果
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-    
-    // 初始检查
-    checkMobile();
-    
-    // 监听窗口大小变化
-    window.addEventListener('resize', checkMobile);
-    
-    // 清理监听器
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  const changeLanguage = (lng: string) => {
-    const { pathname, asPath, query } = router;
-    router.push({ pathname, query }, asPath, { locale: lng });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    const formData = {
-      email, 
-      message, 
-    };
-
-    // 发送邮件
-    try {
-      const response = await fetch('http://localhost:3000/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-  
-      if (response.ok) {
-        alert('Message sent, thank you!');
-        setEmail('');
-        setMessage('');
-      } else {
-        const errorData = await response.json();
-        alert(`Failed to send message: ${errorData.error}`);
-      }
-    } catch (error) {
-      console.error('Error - sending message:', error);
-      alert('There was a problem, please try again later');
+  const toggle = (section: ExpandedSection) => {
+    if (expanded === section) {
+      setExiting(true);
+      exitTimer.current = setTimeout(() => {
+        setExpanded(null);
+        setExiting(false);
+      }, 340);
+    } else {
+      if (exitTimer.current) clearTimeout(exitTimer.current);
+      setExiting(false);
+      setExpanded(section);
     }
   };
 
-  // 修改切换函数以支持子条目
-  const toggleSkills = (mainIndex: number, subIndex?: number) => {
-    const key = subIndex !== undefined ? `${mainIndex}-${subIndex}` : `${mainIndex}`;
-    setExpandedSkills(prev => ({
-      ...prev,
-      [key]: !prev[key]
-    }));
-  };
+  const secondaryLinks = [
+    { href: 'https://github.com/luna25y', icon: FaGithub, label: 'GitHub' },
+    { href: 'https://x.com/luna25y_', icon: FaXTwitter, label: 'X' },
+    { href: 'https://www.linkedin.com/in/rujie-yang-7a5868268/', icon: FaLinkedin, label: 'LinkedIn' },
+  ];
 
-  // 从语言包中读取时间轴数据
-  const timeline = (t('about.timeline.entries', { returnObjects: true }) as unknown) as TimelineEntry[];
+  const aboutSocialLinks = [
+    { href: 'https://github.com/luna25y', icon: FaGithub, label: 'GitHub' },
+    { href: 'https://x.com/luna25y_', icon: FaXTwitter, label: 'Twitter' },
+    { href: 'https://www.linkedin.com/in/rujie-yang-7a5868268/', icon: FaLinkedin, label: 'LinkedIn' },
+    { href: 'mailto:lunayang025@gmail.com', icon: FiMail, label: 'Email' },
+  ];
+
+  const projects = [
+    {
+      id: 'taptune',
+      name: 'TapTune',
+      category: 'macOS App',
+      year: '2023',
+      description: 'Mechanical keyboard sound simulator for macOS. Custom sound profiles, real-time visualization, multi-language support.',
+      href: '/projects/taptune',
+      status: 'live' as const,
+    },
+    {
+      id: 'onchain-experiments',
+      name: 'Onchain Experiments',
+      category: 'Web3',
+      year: '2024',
+      description: 'Exploring decentralized applications and smart contract interactions. Research phase.',
+      status: 'wip' as const,
+    },
+    {
+      id: 'ai-workflows',
+      name: 'AI Workflow Tools',
+      category: 'AI × Productivity',
+      year: '2024–2025',
+      description: 'Building internal tools and agents for research and content workflows.',
+      status: 'wip' as const,
+    },
+    {
+      id: 'knowledge-graph',
+      name: 'Knowledge Constellation',
+      category: 'Knowledge Management',
+      year: '2025',
+      description: 'A visual approach to connecting ideas and research. Early exploration.',
+      status: 'concept' as const,
+    },
+  ];
+
+  const writings = [
+    {
+      id: 'building-in-public',
+      title: 'Building in Public',
+      tags: ['meta', 'process'],
+      excerpt: 'Thoughts on sharing work while it is still in progress.',
+    },
+    {
+      id: 'ai-crypto-intersection',
+      title: 'AI × Crypto: Notes from the Intersection',
+      tags: ['AI', 'crypto', 'research'],
+      excerpt: 'Exploring where intelligent agents meet decentralized systems.',
+    },
+    {
+      id: 'engineering-with-context',
+      title: 'Engineering with Business Context',
+      tags: ['engineering', 'product'],
+      excerpt: 'Why technical decisions are better when you understand the market.',
+    },
+  ];
+
+  const navItems: { id: ExpandedSection; label: string }[] = [
+    { id: 'projects', label: t('home.projectsLabel', 'Projects') },
+    { id: 'writing', label: t('home.writingLabel', 'Writing') },
+    { id: 'about', label: t('home.aboutLabel', 'About') },
+  ];
 
   return (
-      <div className={styles.container}>
+    <div className="home-editorial">
+      <FoxConstellation />
 
-        {/* profile card */}
-        <div className={styles.profileCard}>
-          <div className={styles.profileContent}>
-            <div className={styles.profileText}>
-              <h2 className={styles.profileTitle}>{t('about.text')}</h2>
-              <p className={styles.profileDescription}>{t('about.myDescription')}
-              </p>
-            </div>
-            <div className={styles.profileActions}>
-      <a 
-          href="/files/Rujie Yang (Luna).pdf" 
-          download
-          className={styles.downloadButton}
-      >
-          <FiDownload className={styles.downloadIcon} />
-          {t('about.downloadResume')}
-      </a>
-      {/*
-      <button 
-          className={styles.contactButton}
-          onClick={() => setShowContactForm(true)}
-      >
-          {t('about.sendMessage')}
-      </button>
-      */}
-          </div>
-
-          </div>
+      {/* Project background preview */}
+      {hoveredProject && (
+        <div className={`project-bg-preview project-bg-preview--${hoveredProject}`}>
+          <div className="project-bg-image" />
+          <div className="project-bg-glow" />
         </div>
-
-        {/* 联系表单模态框 */}
-        {showContactForm && (
-          <div className={styles.modalOverlay}>
-            <div className={styles.contactModal}>
-              <h3>{t('about.contactForm.title')}</h3>
-              <button 
-                className={styles.closeButton}
-                onClick={() => setShowContactForm(false)}
-              >
-                &times;
-              </button>
-              <form onSubmit={handleSubmit}>
-                <div className={styles.formGroup}>
-                  <label>{t('about.contactForm.email')}</label>
-                  <input
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </div>
-                <div className={styles.formGroup}>
-                  <label>{t('about.contactForm.message')}</label>
-                  <textarea
-                    required
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    rows={5}
-                  />
-                </div>
-                <button type="submit" className={styles.submitButton}>
-                  {t('about.contactForm.send')}
+      )}
+      <section className={`home-poster ${expanded ? 'section-expanded' : ''}`}>
+        <div className="home-poster-main">
+          {/* Top group: luna + nav items before active (or all items if nothing expanded) */}
+          <div className="home-poster-stack animate-fade-in stagger-1">
+            <h1 className="home-poster-line home-poster-line-primary">
+              {t('home.nameplate', 'luna')}
+              <span className="home-poster-tagline-inline">building in tech, crypto & AI</span>
+            </h1>
+            {(expanded
+              ? navItems.slice(0, navItems.findIndex((n) => n.id === expanded))
+              : navItems
+            ).map((item) => (
+              <div key={item.id} className="home-poster-line home-poster-line-nav">
+                <button
+                  className="section-toggle"
+                  onClick={() => toggle(item.id)}
+                  aria-expanded={false}
+                >
+                  <span>{item.label}</span>
+                  <span className="section-toggle-icon"><FiPlus size={20} /></span>
                 </button>
-              </form>
-            </div>
+              </div>
+            ))}
           </div>
-        )}
 
-        {/* 语言切换器 */}
-        <div className="language-switcher-container">
-          <button
-            className={`language-btn ${router.locale === 'en' ? 'active' : ''}`}
-            onClick={() => changeLanguage('en')}
-          >
-            <GB className="flag-icon" />
-            <span>{t('language.english')}</span>
-          </button>
-          <button
-            className={`language-btn ${router.locale === 'zh' ? 'active' : ''}`}
-            onClick={() => changeLanguage('zh')}
-          >
-            <CN className="flag-icon" />
-            <span>{t('language.chinese')}</span>
-          </button>
-          <button
-            className={`language-btn ${router.locale === 'ja' ? 'active' : ''}`}
-            onClick={() => changeLanguage('ja')}
-          >
-            <JP className="flag-icon" />
-            <span>{t('language.japanese')}</span>
-          </button>
-        </div>
+          {/* Active item row: title on left, content on right */}
+          {expanded && (
+            <div className={`home-poster-active-row${exiting ? ' is-exiting' : ''}`}>
+              <div className="home-poster-line home-poster-line-nav is-active">
+                <button
+                  className="section-toggle"
+                  onClick={() => toggle(expanded)}
+                  aria-expanded={true}
+                >
+                  <span>{navItems.find((n) => n.id === expanded)?.label}</span>
+                  <span className="section-toggle-icon section-toggle-icon--open"><FiPlus size={20} /></span>
+                </button>
+              </div>
 
-        {/* 下方时间轴（保持不变） */}
-        <div className={styles.timeline}>
-          {/* 全局竖线，放在 marker 和卡片之间 */}
-          <div className={styles.verticalLine} />
-          {timeline.map((entry, index) => {
-            const startYear = extractStartYearMonth(entry.period);
-            const endYear = extractEndYearMonth(entry.period);
-            // 根据 type 属性决定卡片背景样式
-            const cardClass = [
-              styles.card,
-              entry.type?.toLowerCase() === 'education' ? styles.education :
-              entry.type?.toLowerCase() === 'work' ? styles.work :
-              styles.otherExperience
-            ].filter(Boolean).join(' ');
-            
-            return (
-              <div key={index} className={styles.timelineItem}>
-                {/* Marker 列：显示开始和结束时间 */}
-                <div className={styles.markerColumn}>
-                  <div className={styles.endMarker}>{endYear}</div>
-                  <div className={styles.startMarker}>{startYear}</div>
-                </div>
-                {/* 经历卡片 */}
-                <div className={styles.cardColumn}>
-                  <div className={cardClass}>  
-                    {/* 右上角经验分类标签 */}
-                    <div className={styles.cardLabel}>
-                      {entry.type?.toLowerCase() === 'education'
-                        ? 'Education'
-                        : entry.type?.toLowerCase() === 'work'
-                        ? 'Professional Experience'
-                        : 'Other Experience'}
-                    </div>
-                    {entry.duration && (
-                      <div className={styles.cardDuration}>
-                        {t('about.duration', 'Duration')}: {entry.duration}
-                      </div>
-                    )}
-                    {entry.institution && (
-                      <div className={styles.cardInstitution}>{entry.institution}</div>
-                    )}
-                    {entry.position && (
-                      <div className={styles.cardPosition}>{entry.position}</div>
-                    )}
-                    {entry.location && (
-                      <div className={styles.cardLocation}>
-                        <CiLocationOn className={styles.locationIcon} />
-                        {entry.location}
-                      </div>
-                    )}
-                    {entry.description && entry.description.length > 0 && (
-                      <div className={styles.cardDescription}>
-                        {entry.description.map((desc, idx) => (
-                          <span key={idx}>
-                            {desc} <br/>
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                    {/* 主条目的技能标签 */}
-                    {entry.skills && entry.skills.length > 0 && (
-                      <div className={styles.skillsContainer}>
-                        {entry.skills
-                          .slice(0, isMobile && !expandedSkills[`${index}`] ? DEFAULT_VISIBLE_TAGS : undefined)
-                          .map((skill, idx) => (
-                            <span key={idx} className={styles.skillTag}>
-                              {skill}
-                            </span>
-                        ))}
-                        {isMobile && entry.skills.length > DEFAULT_VISIBLE_TAGS && (
-                          <button 
-                            className={styles.expandSkillsButton}
-                            onClick={() => toggleSkills(index)}
-                          >
-                            {expandedSkills[`${index}`] ? 
-                              t('about.skills.showLess') : 
-                              t('about.skills.showMore', { count: entry.skills.length - DEFAULT_VISIBLE_TAGS })}
-                          </button>
-                        )}
-                      </div>
-                    )}
-                    {entry.subEntries && entry.subEntries.length > 0 && (
-                      <div className={styles.subEntries}>
-                        {entry.subEntries.map((subEntry, subIndex) => (
-                          <div key={subIndex} className={styles.subEntry}>
-                            <span className={styles.cardPeriod}>{subEntry.period}</span>
-                            <h3 className={styles.cardSubTitle}>{subEntry.title}</h3>
-                            {subEntry.institution && (
-                              <div className={styles.cardInstitution}>{subEntry.institution}</div>
-                            )}
-                            {subEntry.location && (
-                              <div className={styles.cardLocation}>
-                                <CiLocationOn className={styles.locationIcon} />
-                                {subEntry.location}
-                              </div>
-                            )}
-                            {subEntry.description && subEntry.description.length > 0 && (
-                              <div className={styles.cardDescription}>
-                                {subEntry.description.map((desc, idx) => (
-                                  <span key={idx}>
-                                    {desc} <br/>
-                                  </span>
-                                ))}
-                              </div>
-                            )}
-                            {/* 子条目的技能标签 */}
-                            {subEntry.skills && subEntry.skills.length > 0 && (
-                              <div className={styles.skillsContainer}>
-                                {subEntry.skills
-                                  .slice(0, isMobile && !expandedSkills[`${index}-${subIndex}`] ? DEFAULT_VISIBLE_TAGS : undefined)
-                                  .map((skill, sidx) => (
-                                    <span key={sidx} className={styles.skillTag}>
-                                      {skill}
-                                    </span>
-                                  ))}
-                                {isMobile && subEntry.skills.length > DEFAULT_VISIBLE_TAGS && (
-                                  <button 
-                                    className={styles.expandSkillsButton}
-                                    onClick={() => toggleSkills(index, subIndex)}
-                                  >
-                                    {expandedSkills[`${index}-${subIndex}`] ? 
-                                      t('about.skills.showLess') : 
-                                      t('about.skills.showMore', { count: subEntry.skills.length - DEFAULT_VISIBLE_TAGS })}
-                                  </button>
-                                )}
-                              </div>
-                            )}
+              {expanded === 'projects' && (
+                <div className="expanded-content">
+                  <div className="expanded-inner">
+                    <p className="expanded-subtitle">
+                      {t('projects.pageSubtitle', 'Selected work and active explorations. Some are live, others in progress.')}
+                    </p>
+                    <div className="inline-project-list">
+                      {projects.map((p) => (
+                        <div
+                          key={p.id}
+                          className="inline-project-item"
+                          onMouseEnter={() => setHoveredProject(p.id)}
+                          onMouseLeave={() => setHoveredProject(null)}
+                        >
+                          <div className="inline-project-header">
+                            <h3 className="inline-project-name">
+                              {p.href ? (
+                                <Link href={p.href}>
+                                  {p.name} <FiArrowUpRight size={14} />
+                                </Link>
+                              ) : p.name}
+                            </h3>
+                            <span className={`inline-project-status status-${p.status}`}>{p.status}</span>
                           </div>
-                        ))}
-                      </div>
-                    )}
+                          <p className="inline-project-meta">{p.category} · {p.year}</p>
+                          <p className="inline-project-desc">{p.description}</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              )}
+
+              {expanded === 'writing' && (
+                <div className="expanded-content">
+                  <div className="expanded-inner">
+                    <p className="expanded-subtitle">
+                      {t('writing.pageSubtitle', 'Essays, notes, and research. A knowledge space in progress.')}
+                    </p>
+                    <div className="inline-writing-list">
+                      {writings.map((w) => (
+                        <div key={w.id} className="inline-writing-item">
+                          <h3 className="inline-writing-title">{w.title}</h3>
+                          <div className="inline-writing-tags">
+                            {w.tags.map((tag) => (
+                              <span key={tag} className="inline-writing-tag">{tag}</span>
+                            ))}
+                          </div>
+                          <p className="inline-writing-excerpt">{w.excerpt}</p>
+                        </div>
+                      ))}
+                    </div>
+                    <p className="inline-writing-note">
+                      {t('writing.followTeaser', 'New writing shared on ')}
+                      <a href="https://x.com/luna25y_" target="_blank" rel="noopener noreferrer">Twitter/X</a>
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {expanded === 'about' && (
+                <div className="expanded-content">
+                  <div className="expanded-inner">
+                    <p className="about-intro">
+                      {t('about.intro', 'I am a software engineer with an MBA, working at the intersection of technology and business. I have built internal tools at Toyota Systems, coordinated iOS projects, and spent years navigating both code and markets. Currently exploring AI agents and onchain applications.')}
+                    </p>
+                    <div className="about-details-compact">
+                      <div className="about-detail-item">
+                        <h3>{t('about.locationLabel', 'Location')}</h3>
+                        <p>
+                          <FiMapPin size={14} style={{ marginRight: '0.4rem', verticalAlign: 'middle' }} />
+                          {t('about.location', 'Toronto, Canada')}
+                        </p>
+                      </div>
+                      <div className="about-detail-item">
+                        <h3>{t('about.focusLabel', 'Current Focus')}</h3>
+                        <p>{t('about.focus', 'AI × Crypto. Building useful products. Learning in public.')}</p>
+                      </div>
+                      <div className="about-detail-item">
+                        <h3>{t('about.backgroundLabel', 'Background')}</h3>
+                        <p>{t('about.background', 'Engineering at Toyota Systems, MBA from Laurentian University, fluent in Chinese, Japanese, and English.')}</p>
+                      </div>
+                      <div className="about-detail-item">
+                        <h3>{t('about.connectLabel', 'Connect')}</h3>
+                        <div className="about-social-icons">
+                          {aboutSocialLinks.map((link) => (
+                            <a
+                              key={link.label}
+                              href={link.href}
+                              target={link.href.startsWith('mailto') ? undefined : '_blank'}
+                              rel={link.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
+                              aria-label={link.label}
+                            >
+                              <link.icon size={16} />
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    <a href="/files/Rujie Yang (Luna).pdf" download className="resume-download-compact">
+                      <FiDownload size={14} />
+                      {t('about.downloadResume', 'Download Resume')}
+                    </a>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Post group: nav items after active */}
+          {expanded && navItems.findIndex((n) => n.id === expanded) < navItems.length - 1 && (
+            <div className={`home-poster-stack-post${exiting ? ' is-exiting' : ''}`}>
+              {navItems.slice(navItems.findIndex((n) => n.id === expanded) + 1).map((item) => (
+                <div key={item.id} className="home-poster-line home-poster-line-nav">
+                  <button
+                    className="section-toggle"
+                    onClick={() => toggle(item.id)}
+                    aria-expanded={false}
+                  >
+                    <span>{item.label}</span>
+                    <span className="section-toggle-icon"><FiPlus size={20} /></span>
+                  </button>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
-      </div>
+
+        <div className={`home-poster-footer animate-fade-in stagger-2 ${expanded ? 'dimmed' : ''}`}>
+          <p className="home-poster-note">
+            {t(
+              'home.posterNote',
+              'Software engineer with business context. Building lunalogs as a quiet index for work, writing, and future experiments.',
+            )}
+          </p>
+          <div className="home-poster-actions">
+            <a href="/files/Rujie Yang (Luna).pdf" download className="home-poster-action">
+              {t('home.resumeCta', 'Resume')}
+              <FiDownload aria-hidden="true" size={14} />
+            </a>
+            <div className="home-poster-links">
+              {secondaryLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.label}
+                >
+                  <link.icon size={18} />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
 
@@ -365,4 +324,4 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   };
 };
 
-export default About;
+export default Home;

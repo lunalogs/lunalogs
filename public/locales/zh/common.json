@@ -4,300 +4,47 @@
     "home": "主页",
     "projects": "项目",
     "blog": "博客",
+    "writing": "写作",
     "friends": "友链"
   },
-  "about": {
-    "heading": "About",
-    "name": "Rujie Yang (Luna)",
-    "text": "你好，我是 Luna，",
-    "myDescription": "一名拥有 MBA 的软件工程师。",
-    "contact": {
-      "email": "lunayang025@gmail.com",
-      "location": "Toronto"
-    },
-    "sendMessage": "Send me a quick message",
-    "contactForm": {
-      "title": "Contact Luna",
-      "email": "Your Email",
-      "message": "Message",
-      "send": "Send Message"
-    },
-    "downloadResume": "Download Resume",
-    "skills": {
-      "showMore": "查看全部",
-      "showLess": "折叠"
-    },
-    "timeline": {
-      "heading": "Experience & Skills",
-      "entries": [
-        {
-          "period": "Jan 2025 - Now",
-          "duration": "4 month",
-          "type": "Work",
-          "position": "Project Management",
-          "institution": "OceanInk LLC",
-          "location": "Toronto, Ontario, Canada",
-          "description": [
-            "- 在 Oceanink 担任 iOS 应用项目的协调工作，负责管理项目进度、促进团队沟通并跟进交付成果。",
-            "- 与开发、设计和市场团队紧密合作，确保项目各阶段顺利推进。",
-            "- 参与 UI/UX 设计讨论，从用户角度提供反馈，协助设计方案与项目目标保持一致。",
-            "- 协助策划推广活动，支持市场工作，以提升应用的可见度和用户参与度。",
-            "- 负责整理项目文档，监控整体进度，并主动解决团队间的沟通问题。"
-          ],
-          "skills": [
-            "Project Management",
-            "PhotoShop",
-            "Figma",
-            "UI/UX",
-            "Cross-functional Team Coordination"
-          ]
-        },
-        {
-          "period": "Sep 2023 - Jan 2025",
-          "duration": "16 months",
-          "type": "Education",
-          "position": "Master of Business Administration",
-          "institution": "Laurentian University",
-          "location": "Sudbury, Ontario, Canada",
-          "description": [
-            "学习工商管理，课程包括项目管理、商业分析、管理经济学等。",
-            "自学各种开发技术。"
-          ],
-          "skills": [
-            "Project Management",
-            "Investment Management",
-            "Business Analysis",
-            "Managerial Economics",
-            "Operation Management",
-            "Strategy Management",
-            "Unity",
-            "Solidity",
-            "Linux",
-            "TypeScript",
-            "Express.js",
-            "Node.js",
-            "MongoDB",
-            "Redis",
-            "Postman",
-            "Swift"
-          ]
-        },
-        {
-          "period": "May 2021 - Jul 2023",
-          "duration": "2 years and 2 months",
-          "type": "Work",
-          "institution": "SYSystem Co., Ltd. | Assigned to Toyota Systems",
-          "position": "Software Engineer",
-          "location": "Nagoya, Japan",
-          "subEntries": [
-            {
-              "period": "May 2022 - Jul 2023",
-              "duration": "14 months",
-              "subTitle": "OutSystems Support Team",
-              "description": [
-                "- 为 OutSystems 平台提供技术支持，解决技术问题并交付定制化解决方案。",
-                "- 根据需求修改和开发内部应用程序及 API。",
-                "- 独立设计并实现 REST API 以连接 Snowflake 进行数据访问。"
-              ],
-              "skills": [
-                "OutSystems", 
-                "C#", 
-                "JavaScript", 
-                "HTML/CSS", 
-                "SQL", 
-                "Oracle", 
-                "Project Management", 
-                "Agile", 
-                "Scrum", 
-                "Jira"
-              ]
-            },
-            {
-              "period": "Oct 2021 - Nov 2021",
-              "duration": "1 months",
-              "subTitle": "Year-End Audit - Web Application",
-              "description": [
-                "完成年度审计的 Web 应用程序项目。"
-              ],
-              "skills": ["Python", "Django"]
-            },
-            {
-              "period": "May 2021 - Apr 2022",
-              "duration": "11 months",
-              "subTitle": "Development Team",
-              "description": [
-                "开发并维护内部应用程序，以支持核心业务功能。"
-              ],
-              "skills": [
-                "JavaScript", 
-                "HTML/CSS", 
-                "SQL", 
-                "Oracle", 
-                "OutSystems", 
-                "Agile", 
-                "Scrum"
-              ]
-            }
-          ]
-        },
-        {
-          "period": "Jul 2020 - Jul 2023",
-          "duration": "3 years",
-          "type": "Work",
-          "description": "",
-          "institution": "SYSystem Co., Ltd.",
-          "location": "Nagoya, Japan",
-          "position": "Software Engineer",
-          "subEntries": [
-            {
-              "period": "Jan 2021 - Apr 2021",
-              "duration": "4 months",
-              "subTitle": "Java Instructor - Employment Training Program",
-              "description": [
-                "在与政府合作的就业培训项目中教授 Java。"
-              ],
-              "skills": ["Java", "JavaScript", "HTML", "CSS", "SQL", "MySQL"]
-            },
-            {
-              "period": "Jul 2020 - Dec 2020",
-              "duration": "5 months",
-              "subTitle": "Payroll Management System Development",
-              "description": [
-                "参与内部薪资管理系统的开发，负责角色管理、部分页面的设计、开发和测试。"
-              ],
-              "skills": [
-                "Java", 
-                "Spring Boot/MVC", 
-                "JavaScript", 
-                "HTML/CSS", 
-                "SQL", 
-                "MySQL", 
-                "Junit", 
-                "XML", 
-                "Project Management"
-              ]
-            }
-          ]
-        },
-        {
-          "period": "July 2019 - Jun 2020",
-          "duration": "11 months",
-          "type": "work",
-          "institution": "Xi'An Yuri Software (SYSystem Co., Ltd.'s Xi'an branch)",
-          "position": "Intern Software Engineer",
-          "location": "Xi'an, China",
-          "description": [
-            "- 由于新冠疫情和隔离政策导致延误，在等待日本工作签证办理期间于该分公司实习，",
-            "- 承担基础编程任务，并为其他员工提供支持。",
-            "- 持续接受编程、数据结构和算法方面的培训。"
-          ],
-          "skills": [
-            "Java", 
-            "Spring Boot/MVC", 
-            "C++", 
-            "JavaScript", 
-            "HTML/CSS", 
-            "SQL", 
-            "MySQL", 
-            "Junit", 
-            "XML", 
-            "Python"
-          ]
-        },
-        {
-          "period": "Sep 2015 - Jun 2019",
-          "duration": "4 years",
-          "type": "Education",
-          "position": "Bachelor of Arts in Japanese",
-          "institution": "Xi'an International Studies University",
-          "location": "Xi'an, China",
-          "description": [
-            "学习日语和日本文化，并获得 JLPT-N1 级别认证。"
-          ],
-          "skills": [
-            "JLPT-N1",
-            "Japanese Economics",
-            "Microsoft Office",
-            "Adobe Software"
-          ],
-          "subEntries": [
-            {
-              "period": "Feb 2019 - Jun 2019",
-              "duration": "5 months",
-              "subTitle": "Programming Training",
-              "institution": "Xi'An Yuri Software (SYSystem Co., Ltd.'s Xi'an branch)",
-              "location": "Xi'An, China",
-              "description": [
-                "- 通过 SYSystem Co., Ltd. 的面试后，接受了编程、数据结构和算法方面的培训。",
-                "- 获得在中国、日本和韩国认可的程序员证书。"
-              ],
-              "skills": [
-                "Java", 
-                "Spring Boot/MVC", 
-                "C++", 
-                "JavaScript", 
-                "HTML/CSS", 
-                "SQL", 
-                "MySQL", 
-                "Junit", 
-                "XML", 
-                "Python"
-              ]
-            },
-            {
-              "period": "Jul 2017 - Oct 2017",
-              "duration": "4 months",
-              "type":"work",
-              "subTitle": "Internship at Hotel",
-              "institution": "Hotel Green Plaza Karuizawa",
-              "location": "Karuizawa, Gunma, Japan", 
-              "description": [
-                "担任前台，支持日常运营，负责客人入住和退房手续，并处理客人咨询。"
-              ],
-              "skills": ["Customer Service",  "Marketing", "Communication"]
-            }
-          ]
-        }
-      ]
-    }
+  "home": {
+    "eyebrow": "lunalogs",
+    "location": "Toronto",
+    "nameplate": "luna",
+    "primaryDescriptor": "AI x Crypto",
+    "projectsLabel": "Projects",
+    "writingLabel": "Writing",
+    "aboutLabel": "About",
+    "posterNote": "有商业语境的软件工程师。把 lunalogs 做成一个安静的个人索引，用来承接作品、写作和未来实验。",
+    "resumeCta": "简历",
+    "contactLabel": "更多入口"
   },
-    "home": {
-      "heading": "主页",
-      "text": "这里是主页内容。"
-    },
-    "projects": {
-      "heading": "项目",
-
-    "taptune": {
-      "short_desc": "为Mac键盘提供机械键盘敲击音效增强",
-      "features": [
-        "多种预设音效（黑轴/红轴/青轴等）",
-        "支持自定义音效上传",
-        "实时音量可视化",
-        "多语言界面（中/英/日）",
-        "系统托盘控制",
-        "开机自启动配置"
-      ]
-    },
-    "features": "核心功能",
-    "languages": "支持语言",
-    "download": "下载与源码",
-    "mac_store": "Mac应用商店",
-    "source_code": "查看源码"
-    },
-    "blog": {
-      "heading": "博客",
-      "text": "这里展示我的博客文章列表。",
-      "codeMind": "编程拾光",
-      "flowFortune": "财思录",
-      "wanderWonder": "流光记"
-    },
-    "friends": {
-    "heading": "朋友",
-    "lanceMoe": {
-      "name": "LanceMoe",
-      "info":  "一位优秀的在日开发者"
-    }
+  "projects": {
+    "pageTitle": "项目",
+    "pageSubtitle": "精选作品和探索中的项目。有些已上线，有些进行中。",
+    "moreComing": "更多项目将在成熟后记录。"
+  },
+  "writing": {
+    "pageTitle": "写作",
+    "pageSubtitle": "随笔、笔记和研究。一个进行中的知识空间。",
+    "mapLabel": "知识星座预览",
+    "followTeaser": "新文章发布在 ",
+    "and": "和"
+  },
+  "about": {
+    "pageTitle": "关于",
+    "intro": "我是一名拥有MBA的软件工程师，在技术与商业的交汇处工作。曾在丰田系统构建内部工具，协调iOS项目，多年来一直在代码和市场之间穿梭。目前在探索AI代理和链上应用。",
+    "locationLabel": "位置",
+    "location": "多伦多，加拿大",
+    "focusLabel": "当前关注",
+    "focus": "AI × 加密。构建有用的产品。公开学习。",
+    "backgroundLabel": "背景",
+    "background": "丰田系统工程经验，劳伦森大学MBA，精通中文、日文和英文。",
+    "connectLabel": "联系",
+    "downloadResume": "下载简历"
+  },
+  "meta": {
+    "description": "拥有MBA的软件工程师。探索AI × 加密。"
   },
   "language": {
     "label": "语言",
@@ -305,9 +52,5 @@
     "chinese": "中",
     "japanese": "日"
   },
-  "alert":{
-    "email_copied": "邮箱地址已复制"
-  },
   "name": "luna"
 }
-  
