@@ -28,7 +28,7 @@
   },
   "about": {
     "pageTitle": "About",
-    "intro": "MBAを持つソフトウェアエンジニアとして、テクノロジーとビジネスの交差点で働いています。トヨタシステムズで社内ツールを構築し、iOSプロジェクトをコーディネートしてきました。現在はAIエージェントとオンチェーンアプリケーションを探索中です。",
+    "intro": "MBAを持つソフトウェアエンジニアとして、テクノロジーとビジネスの交差点で働いています。トヨタシステムズで社内ツールを構築し、iOSプロジェクトをコーディネートしてきました。近年はブロックチェーン、Web3、暗号市場に深く取り組んでいます。従来のソフトウェア開発から暗号取引所の成長分析まで、クロスドメインの技術力とビジネス感覚を持っています。",
     "locationLabel": "所在地",
     "location": "トロント、カナダ",
     "focusLabel": "現在の焦点",
@@ -37,19 +37,67 @@
     "background": "トヨタシステムズでのエンジニアリング、ローレンティアン大学MBA、中国語・日本語・英語堪能。",
     "connectLabel": "連絡先",
     "downloadResume": "履歴書をダウンロード",
+    "viewFullTimeline": "詳しい職歴タイムラインを見る",
     "timeline": {
-      "heading": "経歴アーカイブ",
-      "summary": "これまでの学習歴と職歴を多言語で保存した記録です。",
+      "heading": "経歴タイムライン",
+      "summary": "最新の履歴内容を新しい順から古い順へ表示します。",
       "entries": [
         {
-          "period": "Jan 2025 - Now",
-          "duration": "4 month",
+          "period": "Apr 2025 - Apr 2026",
+          "duration": "12 months",
           "type": "Work",
+          "position": "Growth & Market Analyst",
+          "institution": "KCEX",
+          "location": "Remote",
+          "description": [
+            "- 業界動向、主要取引所の動向、ブロックチェーンエコシステムの発展をカバーする市場調査と競合分析を実施。",
+            "- 各プラットフォームの製品イノベーションとユーザー成長戦略を評価する競合比較レポートを作成。",
+            "- 経営陣の意思決定とマーケティング方向性をサポートするために市場データとインサイトをまとめた。",
+            "- 取引所の公式Twitter/Xアカウントの日常運営とコンテンツ戦略を担当。",
+            "- 市場アップデート、製品プロモーション、コミュニティエンゲージメントコンテンツを企画・投稿。",
+            "- アカウントパフォーマンス指標を追跡し、エンゲージメントとフォロワー成長を促進するためにコンテンツを継続的に最適化。",
+            "- デザイン業務に参加し、マーケティング素材や製品関連のビジュアルコンテンツの作成を支援。"
+          ],
+          "skills": [
+            "Social Media Management",
+            "Market Research",
+            "Competitive Analysis",
+            "Crypto/Web3",
+            "Content Strategy",
+            "Graphic Design"
+          ]
+        },
+        {
+          "period": "Jan 2025 - Apr 2025",
+          "duration": "3 months",
+          "type": "Work",
+          "position": "Accounting",
+          "institution": "Sphere Media INC",
+          "location": "Los Angeles, CA, USA (Remote)",
+          "description": [
+            "- Excelベースの在庫・原価・利益管理システムを構築・導入。",
+            "- 入庫から出庫までのフルワークフローをカバーする在庫追跡モジュールを設計。",
+            "- 財務データの一貫性と追跡可能性を確保するために標準作業手順書（SOP）を策定。",
+            "- 日々の運営判断をサポートする原価・利益分析モデルを作成。",
+            "- 帳簿記録、給与計算、月次財務報告などの日次財務業務を担当。"
+          ],
+          "skills": [
+            "Excel",
+            "Bookkeeping",
+            "Payroll Management",
+            "Financial Reporting",
+            "SOP Development"
+          ]
+        },
+        {
+          "period": "Dec 2024 - Mar 2025",
+          "duration": "3 months",
+          "type": "Work (Part-time)",
           "position": "Project Management",
           "institution": "OceanInk LLC",
           "location": "Toronto, Ontario, Canada",
           "description": [
-            "- OceaninkにてiOSアプリ開発プロジェクトのコーディネーションを担当し、スケジュール管理、チーム間のコミュニケーション促進、納品物の進捗管理を行いました。",
+            "- OceanInkにてiOSアプリ開発プロジェクトのコーディネーションを担当し、スケジュール管理、チーム間のコミュニケーション促進、納品物の進捗管理を行いました。",
             "- 開発・デザイン・マーケティング各チームと密に連携し、プロジェクトの円滑な進行をサポートしました。",
             "- UI/UX設計に関するディスカッションに参加し、ユーザー視点からのフィードバックを提供し、設計方針の調整を支援しました。",
             "- アプリの認知度とユーザーエンゲージメント向上を目的としたプロモーション活動を調整し、マーケティング施策を支援しました。",

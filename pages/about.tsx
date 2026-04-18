@@ -18,69 +18,70 @@ const About: React.FC = () => {
   ];
 
   return (
-    <div className="about-container">
-      {/* Page Header */}
-      <header className="page-header">
-        <h1 className="page-title">{t('about.pageTitle', 'About')}</h1>
-      </header>
+    <div className="about-container about-page">
+      <div className="about-fixed-block">
+        <header className="page-header">
+          <h1 className="page-title">{t('about.pageTitle', 'About')}</h1>
+        </header>
 
-      <div className="about-section">
-        {/* Main Introduction */}
-        <p className="about-intro">
-          {t('about.intro', 'I am a software engineer with an MBA, working at the intersection of technology and business. I have built internal tools at Toyota Systems, coordinated iOS projects, and spent years navigating both code and markets. Currently exploring AI agents and onchain applications.')}
-        </p>
+        <div className="about-section">
+          <p className="about-intro">
+            {t('about.intro', 'I am a software engineer with an MBA, working at the intersection of technology and business. I have built internal tools at Toyota Systems, coordinated iOS projects, and spent years navigating both code and markets. Currently exploring AI agents and onchain applications.')}
+          </p>
 
-        {/* Details Grid */}
-        <div className="about-details">
-          <div className="about-block">
-            <h3>{t('about.locationLabel', 'Location')}</h3>
-            <p>
-              <FiMapPin style={{ marginRight: '0.5rem', verticalAlign: 'middle' }} />
-              {t('about.location', 'Toronto, Canada')}
-            </p>
-          </div>
+          <div className="about-details">
+            <div className="about-block">
+              <h3>{t('about.locationLabel', 'Location')}</h3>
+              <p>
+                <FiMapPin style={{ marginRight: '0.5rem', verticalAlign: 'middle' }} />
+                {t('about.location', 'Toronto, Canada')}
+              </p>
+            </div>
 
-          <div className="about-block">
-            <h3>{t('about.focusLabel', 'Current Focus')}</h3>
-            <p>{t('about.focus', 'AI × Crypto. Building useful products. Learning in public.')}</p>
-          </div>
+            <div className="about-block">
+              <h3>{t('about.focusLabel', 'Current Focus')}</h3>
+              <p>{t('about.focus', 'AI × Crypto. Building useful products. Learning in public.')}</p>
+            </div>
 
-          <div className="about-block">
-            <h3>{t('about.backgroundLabel', 'Background')}</h3>
-            <p>{t('about.background', 'Engineering at Toyota Systems, MBA from Laurentian University, fluent in Chinese, Japanese, and English.')}</p>
-          </div>
+            <div className="about-block">
+              <h3>{t('about.backgroundLabel', 'Background')}</h3>
+              <p>{t('about.background', 'Engineering at Toyota Systems, MBA from Laurentian University, fluent in Chinese, Japanese, and English.')}</p>
+            </div>
 
-          <div className="about-block">
-            <h3>{t('about.connectLabel', 'Connect')}</h3>
-            <div className="about-links">
-              {profiles.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target={link.href.startsWith('mailto') ? undefined : '_blank'}
-                  rel={link.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-                  className="about-link"
-                >
-                  <link.icon size={16} />
-                  {link.label}
-                </a>
-              ))}
+            <div className="about-block">
+              <h3>{t('about.connectLabel', 'Connect')}</h3>
+              <div className="about-links">
+                {profiles.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target={link.href.startsWith('mailto') ? undefined : '_blank'}
+                    rel={link.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
+                    className="about-link"
+                  >
+                    <link.icon size={16} />
+                    {link.label}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Resume Download - Secondary Action */}
-        <a
-          href={resumeFilePath}
-          download
-          className="resume-download"
-        >
-          <FiDownload size={14} />
-          {t('about.downloadResume', 'Download Resume')}
-        </a>
+          <a href={resumeFilePath} download className="resume-download">
+            <FiDownload size={14} />
+            {t('about.downloadResume', 'Download Resume')}
+          </a>
+        </div>
       </div>
 
-      <ResumeArchive />
+      <div
+        className="about-timeline-scroll"
+        id="experience-timeline"
+        role="region"
+        aria-label={t('about.timeline.heading', 'Experience Timeline')}
+      >
+        <ResumeArchive />
+      </div>
     </div>
   );
 };

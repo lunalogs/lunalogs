@@ -28,7 +28,7 @@
   },
   "about": {
     "pageTitle": "关于",
-    "intro": "我是一名拥有MBA的软件工程师，在技术与商业的交汇处工作。曾在丰田系统构建内部工具，协调iOS项目，多年来一直在代码和市场之间穿梭。目前在探索AI代理和链上应用。",
+    "intro": "我是一名拥有MBA的软件工程师，在技术与商业的交汇处工作。曾在丰田系统构建内部工具，协调iOS项目，近年深入区块链、Web3和加密市场。从传统软件开发到加密交易所的增长分析，具备跨领域的技术能力与商业敏感度。",
     "locationLabel": "位置",
     "location": "多伦多，加拿大",
     "focusLabel": "当前关注",
@@ -37,19 +37,67 @@
     "background": "丰田系统工程经验，劳伦森大学MBA，精通中文、日文和英文。",
     "connectLabel": "联系",
     "downloadResume": "下载简历",
+    "viewFullTimeline": "查看完整履历时间轴",
     "timeline": {
-      "heading": "履历档案",
-      "summary": "保留过往学习与工作经历的多语言记录。",
+      "heading": "经历时间线",
+      "summary": "以下按时间从新到旧展示最新履历内容。",
       "entries": [
         {
-          "period": "Jan 2025 - Now",
-          "duration": "4 month",
+          "period": "Apr 2025 - Apr 2026",
+          "duration": "12 months",
           "type": "Work",
+          "position": "Growth & Market Analyst",
+          "institution": "KCEX",
+          "location": "Remote",
+          "description": [
+            "- 市场研究与竞品分析，覆盖行业趋势、主流交易所动态及区块链生态发展。",
+            "- 产出竞品对比报告，评估各平台产品创新与用户增长策略。",
+            "- 整理行情数据与市场洞察，为管理层决策及市场营销方向提供参考。",
+            "- 负责交易所官方 Twitter/X 账号的日常运营与内容策略。",
+            "- 规划并发布市场行情、产品推广及社区互动类内容。",
+            "- 追踪账号数据表现，持续优化内容方向以提升用户参与度与粉丝增长。",
+            "- 参与设计工作，协助完成营销物料及产品相关视觉内容的制作。"
+          ],
+          "skills": [
+            "Social Media Management",
+            "Market Research",
+            "Competitive Analysis",
+            "Crypto/Web3",
+            "Content Strategy",
+            "Graphic Design"
+          ]
+        },
+        {
+          "period": "Jan 2025 - Apr 2025",
+          "duration": "3 months",
+          "type": "Work",
+          "position": "Accounting",
+          "institution": "Sphere Media INC",
+          "location": "Los Angeles, CA, USA (Remote)",
+          "description": [
+            "- 负责搭建并落地基于 Excel 的库存与成本利润管理体系。",
+            "- 设计库存追踪模块，覆盖入库与出库全流程记录。",
+            "- 制定标准操作流程（SOP），保障财务数据的一致性与可追溯性。",
+            "- 建立成本利润分析模型，支持日常运营决策。",
+            "- 承担日常财务运营工作，包括账务记录、薪资核算及月度财务报告编制。"
+          ],
+          "skills": [
+            "Excel",
+            "Bookkeeping",
+            "Payroll Management",
+            "Financial Reporting",
+            "SOP Development"
+          ]
+        },
+        {
+          "period": "Dec 2024 - Mar 2025",
+          "duration": "3 months",
+          "type": "Work (Part-time)",
           "position": "Project Management",
           "institution": "OceanInk LLC",
           "location": "Toronto, Ontario, Canada",
           "description": [
-            "- 在 Oceanink 担任 iOS 应用项目的协调工作，负责管理项目进度、促进团队沟通并跟进交付成果。",
+            "- 在 OceanInk 担任 iOS 应用项目的协调工作，负责管理项目进度、促进团队沟通并跟进交付成果。",
             "- 与开发、设计和市场团队紧密合作，确保项目各阶段顺利推进。",
             "- 参与 UI/UX 设计讨论，从用户角度提供反馈，协助设计方案与项目目标保持一致。",
             "- 协助策划推广活动，支持市场工作，以提升应用的可见度和用户参与度。",

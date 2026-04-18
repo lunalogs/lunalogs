@@ -260,6 +260,13 @@ const Home: React.FC = () => {
                       <FiDownload size={14} />
                       {t('about.downloadResume', 'Download Resume')}
                     </a>
+                    <Link
+                      href="/about#experience-timeline"
+                      className="home-about-timeline-link"
+                    >
+                      {t('about.viewFullTimeline', 'View full experience timeline')}
+                      <FiArrowUpRight size={14} aria-hidden />
+                    </Link>
                   </div>
                 </div>
               )}

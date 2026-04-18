@@ -28,7 +28,7 @@
   },
   "about": {
     "pageTitle": "About",
-    "intro": "I am a software engineer with an MBA, working at the intersection of technology and business. I have built internal tools at Toyota Systems, coordinated iOS projects, and spent years navigating both code and markets. Currently exploring AI agents and onchain applications.",
+    "intro": "I am a software engineer with an MBA, working at the intersection of technology and business. I have built internal tools at Toyota Systems, coordinated iOS projects, and spent years navigating both code and markets. Recently deep-diving into blockchain, Web3, and crypto markets—from traditional software development to growth analysis at crypto exchanges, with cross-domain technical skills and business sensitivity.",
     "locationLabel": "Location",
     "location": "Toronto, Canada",
     "focusLabel": "Current Focus",
@@ -37,19 +37,67 @@
     "background": "Engineering at Toyota Systems, MBA from Laurentian University, fluent in Chinese, Japanese, and English.",
     "connectLabel": "Connect",
     "downloadResume": "Download Resume",
+    "viewFullTimeline": "View full experience timeline",
     "timeline": {
-      "heading": "Experience Archive",
-      "summary": "A preserved multi-language record of previous study and work experience.",
+      "heading": "Experience Timeline",
+      "summary": "Latest resume content shown from most recent to oldest.",
       "entries": [
         {
-          "period": "Jan 2025 - Now",
-          "duration": "4 month",
+          "period": "Apr 2025 - Apr 2026",
+          "duration": "12 months",
           "type": "Work",
+          "position": "Growth & Market Analyst",
+          "institution": "KCEX",
+          "location": "Remote",
+          "description": [
+            "- Conducted market research and competitive analysis covering industry trends, major exchange dynamics, and blockchain ecosystem developments.",
+            "- Produced competitive comparison reports evaluating product innovations and user growth strategies across platforms.",
+            "- Compiled market data and insights to support management decisions and marketing direction.",
+            "- Managed daily operations and content strategy for the exchange's official Twitter/X account.",
+            "- Planned and published market updates, product promotions, and community engagement content.",
+            "- Tracked account performance metrics and continuously optimized content to boost engagement and follower growth.",
+            "- Participated in design work, assisting with marketing materials and product-related visual content."
+          ],
+          "skills": [
+            "Social Media Management",
+            "Market Research",
+            "Competitive Analysis",
+            "Crypto/Web3",
+            "Content Strategy",
+            "Graphic Design"
+          ]
+        },
+        {
+          "period": "Jan 2025 - Apr 2025",
+          "duration": "3 months",
+          "type": "Work",
+          "position": "Accounting",
+          "institution": "Sphere Media INC",
+          "location": "Los Angeles, CA, USA (Remote)",
+          "description": [
+            "- Built and implemented an Excel-based inventory and cost-profit management system.",
+            "- Designed inventory tracking modules covering full inbound and outbound workflows.",
+            "- Established Standard Operating Procedures (SOPs) to ensure financial data consistency and traceability.",
+            "- Created cost-profit analysis models to support daily operational decisions.",
+            "- Handled daily financial operations including bookkeeping, payroll processing, and monthly financial reporting."
+          ],
+          "skills": [
+            "Excel",
+            "Bookkeeping",
+            "Payroll Management",
+            "Financial Reporting",
+            "SOP Development"
+          ]
+        },
+        {
+          "period": "Dec 2024 - Mar 2025",
+          "duration": "3 months",
+          "type": "Work (Part-time)",
           "position": "Project Management",
           "institution": "OceanInk LLC",
           "location": "Toronto, Ontario, Canada",
           "description": [
-            "- Served as the project coordination for an iOS application at Oceanink, managing schedules, facilitating team communication, and tracking deliverables.",
+            "- Served as the project coordination for an iOS application at OceanInk, managing schedules, facilitating team communication, and tracking deliverables.",
             "- Collaborated closely with development, design, and marketing teams to ensure the smooth execution of project milestones.",
             "- Contributed to UI/UX design discussions by providing user-centered feedback and assisting in aligning design with project goals.",
             "- Supported marketing efforts by coordinating promotional activities aimed at increasing app visibility and user engagement.",

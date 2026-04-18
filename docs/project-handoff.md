@@ -436,6 +436,18 @@ Style implemented:
 - Removed legend overlay and Chinese-only hint text for cleaner presentation.
 - Build verified: `npm run build` passes, all pages static.
 
+### 2026-04-06 - Resume Content Update
+- Updated multilingual resume content in all three locale files (EN/ZH/JA):
+  - Added KCEX - Growth & Market Analyst (Apr 2025 - Apr 2026, Remote)
+  - Added Sphere Media INC - Accounting (Jan 2025 - Apr 2025, Part-time/Remote)
+  - Updated OceanInk LLC to part-time status with corrected dates (Dec 2024 - Mar 2025)
+  - Updated personal intro to reflect new focus on blockchain/Web3/crypto markets
+- Updated files:
+  - `public/locales/en/common.json`
+  - `public/locales/zh/common.json`
+  - `public/locales/ja/common.json`
+- About page (`pages/about.tsx`) automatically reflects changes via ResumeArchive component.
+
 ## 12. Open Questions
 
 These do not block the MVP, but should be revisited:
