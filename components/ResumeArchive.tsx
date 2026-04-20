@@ -32,7 +32,7 @@ const renderDescriptions = (items?: string[]) => {
   if (!items?.length) return null;
 
   return (
-    <ul className="about-archive-description">
+    <ul className="archive-description">
       {items.map((item, index) => (
         <li key={`${index}-${item.slice(0, 24)}`}>{item.replace(/^-+\s*/, '')}</li>
       ))}
@@ -44,9 +44,9 @@ const renderSkills = (skills?: string[]) => {
   if (!skills?.length) return null;
 
   return (
-    <div className="about-skill-tags">
+    <div className="archive-skill-list">
       {skills.map((skill, index) => (
-        <span key={`${index}-${skill}`} className="about-skill-tag">
+        <span key={`${index}-${skill}`} className="archive-skill-pill">
           {skill}
         </span>
       ))}
@@ -58,34 +58,25 @@ const renderSubEntries = (entries?: ResumeArchiveEntry[]) => {
   if (!entries?.length) return null;
 
   return (
-    <div className="about-archive-subentries">
+    <div className="archive-subentries">
       {entries.map((entry, index) => (
-        <article
-          key={entryKey(entry, index)}
-          className="about-archive-subentry"
-        >
-          <div className="about-archive-submarker" aria-hidden="true" />
-          <div className="about-archive-subheading">
-            <div>
-              <p className="about-archive-period about-archive-period-sub">
-                {entry.period}
-              </p>
-              <h3>{entry.subTitle ?? entry.position ?? entry.institution}</h3>
-            </div>
-            {entry.type && (
-              <span className="about-timeline-type about-timeline-type-sub">
-                {entry.type}
-              </span>
-            )}
+        <article key={entryKey(entry, index)} className="archive-subentry">
+          <div className="archive-subentry-meta">
+            <span>{entry.period}</span>
+            {entry.type && <span>{entry.type}</span>}
           </div>
-          {entry.institution && (
-            <p className="about-archive-institution">{entry.institution}</p>
-          )}
-          {formatMeta(entry) && (
-            <p className="about-archive-meta">{formatMeta(entry)}</p>
-          )}
-          {renderDescriptions(entry.description)}
-          {renderSkills(entry.skills)}
+
+          <div className="archive-subentry-main">
+            <h4>{entry.subTitle ?? entry.position ?? entry.institution}</h4>
+            {entry.institution && (
+              <p className="archive-subentry-org">{entry.institution}</p>
+            )}
+            {formatMeta(entry) && (
+              <p className="archive-subentry-detail">{formatMeta(entry)}</p>
+            )}
+            {renderDescriptions(entry.description)}
+            {renderSkills(entry.skills)}
+          </div>
         </article>
       ))}
     </div>
@@ -99,10 +90,10 @@ const ResumeArchive: React.FC = () => {
   }) as ResumeArchiveEntry[];
 
   return (
-    <section className="about-archive">
-      <div className="about-archive-header">
-        <h2>{t('about.timeline.heading', 'Experience Timeline')}</h2>
-        <p className="about-archive-intro">
+    <section className="archive-section">
+      <div className="archive-header">
+        <p className="page-kicker">{t('about.timeline.heading', 'Experience Timeline')}</p>
+        <p className="archive-summary">
           {t(
             'about.timeline.summary',
             'Latest resume content, shown from most recent to oldest.',
@@ -110,41 +101,29 @@ const ResumeArchive: React.FC = () => {
         </p>
       </div>
 
-      <ol className="about-archive-list">
+      <div className="archive-list">
         {entries.map((entry, index) => (
-          <li
-            key={entryKey(entry, index)}
-            className="about-archive-item"
-          >
-            <article className="about-archive-card">
-              <div className="about-archive-marker" aria-hidden="true" />
-              <div className="about-archive-card-inner">
-                <div className="about-archive-topline">
-                  <p className="about-archive-period">{entry.period}</p>
-                  {entry.type && (
-                    <span className="about-timeline-type">{entry.type}</span>
-                  )}
-                </div>
-                <h3 className="about-archive-heading">
-                  {entry.position ?? entry.institution}
-                </h3>
-                {entry.institution && entry.position && (
-                  <p className="about-archive-institution">{entry.institution}</p>
-                )}
-                {formatMeta(entry) && (
-                  <p className="about-archive-meta">{formatMeta(entry)}</p>
-                )}
+          <article key={entryKey(entry, index)} className="archive-item">
+            <div className="archive-item-meta">
+              <span>{entry.period}</span>
+              {entry.type && <span>{entry.type}</span>}
+            </div>
 
-                <div className="about-archive-body">
-                  {renderDescriptions(entry.description)}
-                  {renderSkills(entry.skills)}
-                  {renderSubEntries(entry.subEntries)}
-                </div>
-              </div>
-            </article>
-          </li>
+            <div className="archive-item-main">
+              <h3>{entry.position ?? entry.institution}</h3>
+              {entry.institution && entry.position && (
+                <p className="archive-organization">{entry.institution}</p>
+              )}
+              {formatMeta(entry) && (
+                <p className="archive-detail">{formatMeta(entry)}</p>
+              )}
+              {renderDescriptions(entry.description)}
+              {renderSkills(entry.skills)}
+              {renderSubEntries(entry.subEntries)}
+            </div>
+          </article>
         ))}
-      </ol>
+      </div>
     </section>
   );
 };

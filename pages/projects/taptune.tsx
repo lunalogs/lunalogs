@@ -5,15 +5,17 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const TapTuneProject: React.FC = () => {
   return (
-    <div className="project-detail-page">
-      <Link href="/projects" className="project-back-link">
-        Back to projects
-      </Link>
+    <div className="page-shell project-detail-page">
+      <div className="detail-backline">
+        <Link href="/projects" className="inline-link">
+          Back to projects
+        </Link>
+      </div>
 
-      <header className="project-detail-hero">
-        <div className="project-detail-meta">TapTune · 2023 · macOS App</div>
-        <h1 className="project-detail-title">TapTune</h1>
-        <p className="project-detail-summary">
+      <header className="page-header-block project-detail-hero">
+        <p className="page-kicker">macOS utility · 2023</p>
+        <h1 className="page-title-display">TapTune</h1>
+        <p className="page-intro">
           A keyboard sound simulator for macOS focused on playful feedback,
           customizable sound profiles, and responsive visual interaction.
         </p>
@@ -24,33 +26,33 @@ const TapTuneProject: React.FC = () => {
           <img src="/images/taptune-icon.png" alt="TapTune icon" />
         </div>
 
-        <div className="project-detail-copy">
-          <div className="project-detail-block">
-            <h2>Overview</h2>
-            <p>
-              TapTune started as a focused desktop app experiment around sound,
-              tactile interface feedback, and a lightweight utility experience.
-              This first public site version keeps the project page concise while
-              the full case study is still being documented.
+        <div className="project-detail-sections">
+          <article className="content-block">
+            <div className="block-label">Overview</div>
+            <p className="block-copy">
+              TapTune started as a compact desktop experiment around tactile
+              feedback, personality, and utility app restraint. The project page
+              here is intentionally editorial: one clear summary, the core
+              ideas, and room for a fuller case study later.
             </p>
-          </div>
+          </article>
 
-          <div className="project-detail-block">
-            <h2>What it explored</h2>
-            <ul>
+          <article className="content-block">
+            <div className="block-label">What it explored</div>
+            <ul className="detail-list">
               <li>Custom keyboard sound profiles for macOS</li>
               <li>Real-time visual feedback tied to keystrokes</li>
-              <li>A compact utility-app workflow with multi-language support</li>
+              <li>A small footprint utility flow with multilingual support</li>
             </ul>
-          </div>
+          </article>
 
-          <div className="project-detail-block">
-            <h2>Status</h2>
-            <p>
-              This page is a placeholder landing page for the project while a
-              fuller write-up and richer screenshots are prepared.
+          <article className="content-block">
+            <div className="block-label">Status</div>
+            <p className="block-copy">
+              This is currently a concise landing page while a richer write-up
+              and more polished screenshots are being prepared.
             </p>
-          </div>
+          </article>
         </div>
       </section>
     </div>

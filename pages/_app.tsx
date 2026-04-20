@@ -35,15 +35,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <meta property="og:description" content={t('meta.description', 'Software engineer with MBA. Exploring AI × Crypto.')} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`https://${siteDomain}${router.asPath === '/' ? '' : router.asPath}`} />
-        
-        {/* Fonts */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-        
         {/* Favicon */}
         <link rel="icon" href="/images/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png" />

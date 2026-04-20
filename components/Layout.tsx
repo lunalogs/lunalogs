@@ -1,23 +1,15 @@
 import React from 'react';
-import { useRouter } from 'next/router';
 import Navigation from './Navigation';
-import Footer from './Footer';
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const router = useRouter();
-  const isHome = router.pathname === '/';
-
   return (
-    <div className={`layout ${isHome ? 'layout-home' : ''}`}>
-      {!isHome && <Navigation />}
-      <main className={`main-content ${isHome ? 'main-content-home' : ''}`}>
-        {children}
-      </main>
-      {!isHome && <Footer />}
+    <div className="site-shell">
+      <Navigation />
+      <main className="site-main">{children}</main>
     </div>
   );
 };
