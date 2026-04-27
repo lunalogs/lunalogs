@@ -1,6 +1,5 @@
 import crypto from 'crypto';
 import type { NextApiRequest } from 'next';
-import { get, list, put } from '@vercel/blob';
 
 const ANALYTICS_COOKIE = 'lunalogs_da';
 const ANALYTICS_COOKIE_MAX_AGE = 60 * 60 * 12;
@@ -67,6 +66,8 @@ const ensureAnalyticsConfigured = () => {
     );
   }
 };
+
+const getBlobSdk = async () => import('@vercel/blob');
 
 const formatDayKey = (date: Date) =>
   new Intl.DateTimeFormat('en-CA', {
@@ -195,6 +196,7 @@ const parseCookies = (cookieHeader?: string) => {
 };
 
 const pathnameToRecord = async (pathname: string) => {
+  const { get } = await getBlobSdk();
   const response = await get(pathname, { access: 'private' });
 
   if (response.statusCode !== 200 || !response.stream) {
@@ -288,6 +290,7 @@ export const trackVisit = async (
   };
 
   const pathname = `${ANALYTICS_PREFIX}${dayKey}/${recordedAt.getTime()}-${id}.json`;
+  const { put } = await getBlobSdk();
 
   await put(pathname, JSON.stringify(record), {
     access: 'private',
@@ -303,6 +306,7 @@ export const getDashboardData = async (
   filters: DashboardFilters,
 ): Promise<DashboardData> => {
   ensureAnalyticsConfigured();
+  const { list } = await getBlobSdk();
 
   const blobs = [];
   let cursor: string | undefined;
