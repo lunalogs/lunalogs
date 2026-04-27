@@ -40,7 +40,10 @@ const Navigation: React.FC = () => {
   };
 
   const currentItem =
-    navItems.find((item) => isActive(item.href)) ?? navItems[0];
+    navItems.find((item) => isActive(item.href)) ??
+    (router.pathname === '/da'
+      ? { href: '/da', label: 'Analytics', icon: FiGrid }
+      : navItems[0]);
 
   const closeMenu = () => setMobileMenuOpen(false);
 

@@ -5,6 +5,7 @@ import { appWithTranslation } from 'next-i18next';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 import nextI18NextConfig from '../next-i18next.config';
 import { siteDomain, siteName } from '../lib/site';
 
@@ -20,8 +21,57 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     if (path.startsWith('/projects/')) return `Project — ${siteName}`;
     if (path === '/writing') return `Writing — ${siteName}`;
     if (path === '/about') return `About — ${siteName}`;
+    if (path === '/da') return `Analytics — ${siteName}`;
     return siteName;
   };
+
+  useEffect(() => {
+    const trackPageView = () => {
+      if (typeof window === 'undefined') {
+        return;
+      }
+
+      const path = `${window.location.pathname}${window.location.search}`;
+
+      if (path.startsWith('/da')) {
+        return;
+      }
+
+      const payload = JSON.stringify({
+        path,
+        referrer: document.referrer,
+        title: document.title,
+        utmSource: new URLSearchParams(window.location.search).get('utm_source') || '',
+      });
+
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon(
+          '/api/analytics/track',
+          new Blob([payload], { type: 'application/json' }),
+        );
+        return;
+      }
+
+      void fetch('/api/analytics/track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: payload,
+        keepalive: true,
+      });
+    };
+
+    trackPageView();
+
+    const handleRouteChange = () => {
+      window.requestAnimationFrame(trackPageView);
+    };
+
+    router.events.on('routeChangeComplete', handleRouteChange);
+
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
 
   return (
     <>

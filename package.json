@@ -6,6 +6,7 @@
   "author": "luna",
   "license": "Apache-2.0",
   "dependencies": {
+    "@vercel/blob": "^2.3.3",
     "i18next": "^24.2.2",
     "next": "^16.2.1",
     "next-i18next": "^15.4.1",
