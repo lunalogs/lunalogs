@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import React, { useEffect, useMemo, useState } from 'react';
 import type { GetServerSideProps } from 'next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { FiActivity, FiGlobe, FiKey, FiLogOut, FiMapPin, FiRefreshCcw, FiSearch, FiUsers } from 'react-icons/fi';
 import { isDashboardAuthed, type DashboardData } from '../lib/analytics';
 
@@ -401,7 +400,6 @@ const AnalyticsPage: React.FC<AnalyticsPageProps> = ({
 };
 
 export const getServerSideProps: GetServerSideProps = async ({
-  locale,
   req,
 }) => {
   const authorized = isDashboardAuthed(req.headers.cookie);
@@ -414,7 +412,6 @@ export const getServerSideProps: GetServerSideProps = async ({
       authorized,
       initialStartDate: getDateInputValue(start),
       initialEndDate: today,
-      ...(await serverSideTranslations(locale ?? 'en', ['common'])),
     },
   };
 };
